@@ -38,7 +38,9 @@ async def context(browser: Browser) -> BrowserContext:
     Yields:
         Playwright BrowserContext object
     """
-    context = await browser.new_context()
+    context = await browser.new_context(
+        base_url=os.getenv("BASE_URL", "http://localhost:3000")
+    )
     yield context
     await context.close()
 
@@ -118,14 +120,3 @@ def pytest_configure(config):
     config.addinivalue_line("markers", "critical: mark test as critical test")
     config.addinivalue_line("markers", "slow: mark test as slow running")
     config.addinivalue_line("markers", "integration: mark test as integration test")
-
-
-@pytest.fixture
-def event_loop():
-    """
-    Fixture to provide an event loop for async tests.
-    """
-    import asyncio
-    loop = asyncio.get_event_loop_policy().new_event_loop()
-    yield loop
-    loop.close()
