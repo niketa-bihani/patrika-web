@@ -1,0 +1,9 @@
+TC_ID,Module,Test Case Title,Priority,Automatable,Test Type,Preconditions,Test Steps,Test Data,Base URL,Method,Endpoint,Request Headers,Request Body,Expected Result,Actual Result,Status
+TC-LOGIN-01,Login,Verify Login entry point is visible and opens login modal,High,Yes,Positive,"User is on Patrika homepage, logged out","1. Open homepage
+2. Click Login icon/link",,https://www.patrika.com,,/login,,,Modal/page renders with mobile number input,,
+TC-LOGIN-02,Login,Verify OTP is triggered for a valid mobile number,High,Yes,Positive,"User is logged out, login modal is open","1. Enter valid 10-digit mobile number
+2. Click 'Get OTP'",Mobile Number: 9876543210,https://www.patrika.com,,/login,,,"OTP triggered, ""OTP sent"" confirmation shown, OTP input field appears",,
+TC-LOGIN-03,Login,Verify invalid mobile number format is rejected,Medium,Yes,Negative,"User is logged out, login modal is open","1. Enter invalid mobile number (wrong length/letters/invalid start digit)
+2. Click 'Get OTP'",Mobile Number: 98765 (invalid - too short),https://www.patrika.com,,/login,,,"Inline validation error shown, OTP not triggered",,
+TC-LOGIN-04,Login,Verify OTP request is rate-limited on rapid repeat clicks,Medium,Yes,Negative,"User is logged out, login modal is open","1. Enter valid mobile number
+2. Click 'Get OTP' repeatedly within cooldown window",Mobile Number: 9876543210,https://www.patrika.com,,/login,,,"""Resend OTP"" disabled/timed (e.g. 30-60s cooldown), prevents spam-triggering",,

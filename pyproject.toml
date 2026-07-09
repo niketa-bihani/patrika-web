@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patrika-web-qa-automation"
+version = "1.0.0"
+description = "QA Automation Framework for Patrika Web Project using Playwright and Python"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "QA Team"}]
+readme = "README.md"
+keywords = ["playwright", "qa", "automation", "testing", "pytest"]
+
+dependencies = [
+    "playwright>=1.48.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-xdist>=3.5.0",
+    "pytest-html>=4.1.1",
+    "python-dotenv>=1.0.0",
+    "pytest-timeout>=2.2.0",
+]
+
+[project.scripts]
+run-tests = "pytest"
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.7.0",
+    "isort>=5.13.2",
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v --tb=short --strict-markers -n auto"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "smoke: mark test as a smoke test",
+    "regression: mark test as a regression test",
+    "critical: mark test as a critical test",
+    "slow: mark test as slow running",
+    "integration: mark test as an integration test",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
