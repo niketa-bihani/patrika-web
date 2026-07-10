@@ -1,0 +1,417 @@
+<title>Patrika Web — QA Automation Handover</title>
+<style>
+  :root {
+    --paper:#fbfbfc; --surface:#ffffff; --surface-2:#f6f7f9;
+    --ink:#191c22; --ink-soft:#454a55; --muted:#6b7180;
+    --line:#e5e7ea; --line-soft:#eef0f2;
+    --accent:#c1272d; --accent-ink:#8f1a20; --accent-wash:#fbecec;
+    --good:#1c7d54; --good-wash:#e7f4ec;
+    --warn:#9a6612; --warn-wash:#f8efdd;
+    --shadow:0 1px 2px rgba(20,22,28,.04), 0 8px 24px rgba(20,22,28,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:#101216; --surface:#171a20; --surface-2:#1c1f26;
+      --ink:#ecedf1; --ink-soft:#b6bac3; --muted:#868b97;
+      --line:#282c34; --line-soft:#20242b;
+      --accent:#f2565c; --accent-ink:#f2565c; --accent-wash:#26181a;
+      --good:#4ec38a; --good-wash:#122720;
+      --warn:#e0a94a; --warn-wash:#2a2214;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#fbfbfc; --surface:#ffffff; --surface-2:#f6f7f9;
+    --ink:#191c22; --ink-soft:#454a55; --muted:#6b7180;
+    --line:#e5e7ea; --line-soft:#eef0f2;
+    --accent:#c1272d; --accent-ink:#8f1a20; --accent-wash:#fbecec;
+    --good:#1c7d54; --good-wash:#e7f4ec;
+    --warn:#9a6612; --warn-wash:#f8efdd;
+    --shadow:0 1px 2px rgba(20,22,28,.04), 0 8px 24px rgba(20,22,28,.05);
+  }
+  :root[data-theme="dark"] {
+    --paper:#101216; --surface:#171a20; --surface-2:#1c1f26;
+    --ink:#ecedf1; --ink-soft:#b6bac3; --muted:#868b97;
+    --line:#282c34; --line-soft:#20242b;
+    --accent:#f2565c; --accent-ink:#f2565c; --accent-wash:#26181a;
+    --good:#4ec38a; --good-wash:#122720;
+    --warn:#e0a94a; --warn-wash:#2a2214;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,"Segoe UI",system-ui,Roboto,sans-serif;
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:820px; margin:0 auto; padding:0 24px 96px; }
+  .serif { font-family:Georgia,"Times New Roman",serif; }
+
+  h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:600; text-wrap:balance; letter-spacing:-.01em; }
+  a { color:var(--accent-ink); }
+  code, .mono { font-family:ui-monospace,"Cascadia Code",Consolas,"Courier New",monospace; }
+  .num { font-variant-numeric:tabular-nums; }
+
+  /* ---- Masthead ---- */
+  header.mast {
+    border-bottom:2px solid var(--ink);
+    padding:52px 0 28px; margin-bottom:44px;
+  }
+  .eyebrow {
+    font-size:12px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:20px;
+  }
+  .eyebrow::before { content:""; width:26px; height:2px; background:var(--accent); display:inline-block; }
+  h1 { font-size:41px; line-height:1.1; margin:0 0 14px; }
+  .lede { font-size:18px; color:var(--ink-soft); max-width:60ch; margin:0; }
+  .meta-row {
+    display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:26px;
+    font-size:13.5px; color:var(--muted);
+  }
+  .meta-row b { color:var(--ink); font-weight:600; }
+
+  .badge {
+    display:inline-flex; align-items:center; gap:7px;
+    padding:4px 11px; border-radius:100px; font-size:12.5px; font-weight:600;
+    background:var(--good-wash); color:var(--good); border:1px solid transparent;
+  }
+  .badge .dot { width:7px; height:7px; border-radius:50%; background:currentColor; }
+
+  /* ---- Stat row ---- */
+  .stats {
+    display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:0 0 52px;
+  }
+  .stat {
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:18px 18px 16px; box-shadow:var(--shadow);
+  }
+  .stat .big { font-family:Georgia,serif; font-size:32px; line-height:1; color:var(--accent); }
+  .stat .lbl { font-size:12.5px; color:var(--muted); margin-top:8px; }
+
+  /* ---- Sections ---- */
+  section { margin:0 0 46px; }
+  .sec-head { display:flex; align-items:baseline; gap:14px; margin-bottom:20px; padding-top:8px; }
+  .sec-no {
+    font-family:Georgia,serif; font-size:15px; color:var(--accent);
+    border:1.5px solid var(--accent); border-radius:50%; width:30px; height:30px;
+    display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+  }
+  h2 { font-size:25px; margin:0; }
+  .sec-head p { margin:2px 0 0; color:var(--muted); font-size:14px; }
+  h3 { font-size:17.5px; margin:26px 0 10px; }
+  p { margin:0 0 14px; }
+  .body-copy { max-width:65ch; }
+
+  ul.clean { list-style:none; padding:0; margin:0 0 16px; }
+  ul.clean li { position:relative; padding:6px 0 6px 24px; border-bottom:1px solid var(--line-soft); }
+  ul.clean li::before { content:""; position:absolute; left:2px; top:15px; width:7px; height:7px; border-radius:50%; background:var(--accent); }
+  ul.clean li:last-child { border-bottom:0; }
+
+  /* ---- Cards / fix log ---- */
+  .card {
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:20px 22px; margin:0 0 14px; box-shadow:var(--shadow);
+  }
+  .card .tag {
+    font-size:11px; font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--accent); display:block; margin-bottom:7px;
+  }
+  .card h3 { margin:0 0 8px; font-size:17px; }
+  .card p { font-size:14.5px; color:var(--ink-soft); margin:0 0 6px; }
+  .card .fix { font-size:14px; color:var(--good); font-weight:500; }
+  .card .fix::before { content:"→ "; }
+
+  /* ---- Tables ---- */
+  .table-scroll { overflow-x:auto; border:1px solid var(--line); border-radius:12px; margin:0 0 16px; box-shadow:var(--shadow); }
+  table { border-collapse:collapse; width:100%; font-size:14px; background:var(--surface); }
+  th, td { text-align:left; padding:11px 16px; border-bottom:1px solid var(--line-soft); vertical-align:top; }
+  thead th { background:var(--surface-2); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); font-weight:600; white-space:nowrap; }
+  tbody tr:last-child td { border-bottom:0; }
+  td.mono, th.mono { font-family:ui-monospace,Consolas,monospace; white-space:nowrap; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:100px; font-size:12px; font-weight:600; }
+  .pill.pass { background:var(--good-wash); color:var(--good); }
+  .pill.hi { background:var(--accent-wash); color:var(--accent-ink); }
+  .pill.med { background:var(--warn-wash); color:var(--warn); }
+
+  /* ---- Command / code block ---- */
+  pre {
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:15px 18px; overflow-x:auto; font-size:13.5px; line-height:1.7; margin:0 0 16px;
+  }
+  pre code { color:var(--ink); }
+  .cmt { color:var(--muted); }
+
+  /* ---- Callout ---- */
+  .callout {
+    border-left:3px solid var(--warn); background:var(--warn-wash);
+    padding:14px 18px; border-radius:0 10px 10px 0; margin:0 0 16px; font-size:14.5px;
+  }
+  .callout b { color:var(--ink); }
+  .callout.good { border-color:var(--good); background:var(--good-wash); }
+
+  /* ---- Roadmap ---- */
+  .road { display:grid; gap:12px; }
+  .road-item { display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 20px; box-shadow:var(--shadow); }
+  .road-when { font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); padding-top:2px; white-space:nowrap; }
+  .road-item h3 { margin:0 0 4px; font-size:16px; }
+  .road-item p { margin:0; font-size:14px; color:var(--ink-soft); }
+
+  footer { margin-top:64px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+
+  @media (max-width:680px) {
+    h1 { font-size:32px; }
+    .stats { grid-template-columns:repeat(2,1fr); }
+    .sec-head { gap:10px; }
+    .road-item { grid-template-columns:1fr; gap:4px; }
+  }
+
+  /* ---- Print / PDF (File → Print → Save as PDF) ---- */
+  @media print {
+    /* Force the light palette regardless of viewer theme */
+    :root, :root[data-theme="dark"] {
+      --paper:#ffffff; --surface:#ffffff; --surface-2:#f5f6f8;
+      --ink:#16181d; --ink-soft:#3f444e; --muted:#5c616c;
+      --line:#d9dbdf; --line-soft:#e8eaed;
+      --accent:#b01f26; --accent-ink:#8f1a20; --accent-wash:#f7e7e7;
+      --good:#186b48; --good-wash:#e6f2ea;
+      --warn:#8a5a10; --warn-wash:#f6ecd8;
+      --shadow:none;
+    }
+    @page { size:A4; margin:16mm 15mm; }
+    body { background:#fff; font-size:11.5pt; line-height:1.5; }
+    .wrap { max-width:none; margin:0; padding:0; }
+    a { color:var(--ink); text-decoration:none; }
+
+    /* Keep visual blocks intact across page breaks */
+    .card, .road-item, .callout, .table-scroll, pre, .stat { break-inside:avoid; page-break-inside:avoid; box-shadow:none; }
+    section, .sec-head { break-inside:avoid; }
+    h2, h3 { break-after:avoid; }
+    header.mast { padding-top:0; }
+    section { margin-bottom:26px; }
+    footer { margin-top:34px; }
+    /* Ensure accent/status colors render in print */
+    * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="eyebrow">QA Automation · Handover Brief</div>
+    <h1>Patrika Web — Login Automation Framework</h1>
+    <p class="lede">A Python + Playwright test automation framework validating the login journey on
+      <span class="mono">patrika.com</span>, built on the Page Object Model and executed against the live production site.</p>
+    <div class="meta-row">
+      <span><b>Prepared for</b> Engineering Manager review</span>
+      <span><b>Target</b> www.patrika.com (Hindi news portal)</span>
+      <span><b>Date</b> 10 July 2026</span>
+      <span class="badge"><span class="dot"></span>Suite green · 19/19 passing</span>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <div class="stats">
+    <div class="stat"><div class="big num">19/19</div><div class="lbl">Login tests passing against the live site</div></div>
+    <div class="stat"><div class="big num">3</div><div class="lbl">Blocking defects diagnosed &amp; fixed</div></div>
+    <div class="stat"><div class="big num">91s</div><div class="lbl">Full suite runtime, end-to-end</div></div>
+    <div class="stat"><div class="big num">100%</div><div class="lbl">Selectors validated on real DOM</div></div>
+  </div>
+
+  <!-- 1. Executive summary -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">1</span>
+      <div><h2>Executive summary</h2><p>Where the framework stands today</p></div>
+    </div>
+    <div class="body-copy">
+      <p>The login test suite is <b>fully operational and passing</b>. It drives a real browser through the login
+        flow on the live <span class="mono">patrika.com</span> site and validates the entry point, mobile-number
+        handling, OTP triggering, and input validation — 19 automated checks in total.</p>
+      <p>The framework existed in draft form but <b>could not execute</b>: test runs hung indefinitely and, once
+        unblocked, every test failed because the selectors did not match the real website. This session diagnosed
+        the root causes, corrected them, and verified the suite green against production. The framework is now a
+        reliable, repeatable regression asset.</p>
+    </div>
+    <div class="callout good"><b>Bottom line:</b> from "will not run" to a stable 19/19 green suite, with the
+      underlying causes fixed at the source rather than worked around.</div>
+  </section>
+
+  <!-- 2. What the framework is -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">2</span>
+      <div><h2>What the framework is</h2><p>Architecture &amp; design approach</p></div>
+    </div>
+    <div class="body-copy">
+      <p>The framework follows the industry-standard <b>Page Object Model (POM)</b>, separating <i>what</i> a test
+        verifies from <i>how</i> the page is operated. This keeps tests readable and means a UI change is fixed in
+        one place, not across dozens of tests.</p>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Layer</th><th>Location</th><th>Responsibility</th></tr></thead>
+        <tbody>
+          <tr><td>Page Objects</td><td class="mono">pages/</td><td>Selectors &amp; actions per screen — <span class="mono">BasePage</span>, <span class="mono">HomePage</span>, <span class="mono">LoginPage</span></td></tr>
+          <tr><td>Test Suites</td><td class="mono">tests/</td><td>Business assertions, organised by scenario type</td></tr>
+          <tr><td>Utilities</td><td class="mono">utils/</td><td>CSV data loader &amp; shared test helpers</td></tr>
+          <tr><td>Test Data</td><td class="mono">test-data/</td><td>Test cases sourced from <span class="mono">LoginTest.csv</span></td></tr>
+          <tr><td>Configuration</td><td class="mono">conftest.py · pytest.ini</td><td>Browser fixtures, environment, markers, timeouts</td></tr>
+          <tr><td>Reports</td><td class="mono">reports/</td><td>Self-contained HTML run report</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body-copy">Tests are <b>data-driven</b>: the four core cases (TC-LOGIN-01 to 04) are defined in a CSV
+      that mirrors the manual test plan, so QA can extend coverage without touching code.</p>
+  </section>
+
+  <!-- 3. Engineering work completed -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">3</span>
+      <div><h2>Engineering work completed</h2><p>Three blocking defects — root cause &amp; resolution</p></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Defect 1 · Critical — suite would not run</span>
+      <h3>Test runs hung indefinitely (event-loop deadlock)</h3>
+      <p>The browser was created on a session-scoped async loop while each test ran on its own per-test loop.
+        Every browser command then waited on a loop that never advanced — the run froze with no output, which
+        looked like "tests not running."</p>
+      <p class="fix">Aligned the async loop scopes in <span class="mono">pytest.ini</span> so fixtures and tests share one event loop.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Defect 2 · High — navigation failed</span>
+      <h3>Invalid-URL error on every test</h3>
+      <p>Pages navigated to the relative path <span class="mono">"/"</span>, but the browser context had no base
+        URL configured, so Playwright rejected it as an invalid URL.</p>
+      <p class="fix">Set <span class="mono">base_url</span> on the browser context and removed a deprecated event-loop fixture.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Defect 3 · High — selectors did not match the site</span>
+      <h3>Login selectors were assumptions, not the real DOM</h3>
+      <p>The tests assumed a pop-up modal with English labels. The live site behaves differently — verified by
+        inspecting the production DOM directly:</p>
+      <div class="table-scroll" style="margin-top:10px;">
+        <table>
+          <thead><tr><th>Tests assumed</th><th>Reality on patrika.com</th></tr></thead>
+          <tbody>
+            <tr><td>Login opens a <b>modal</b></td><td>Login is a separate <span class="mono">/login</span> page</td></tr>
+            <tr><td>English labels (Login, Get OTP)</td><td>Hindi — लॉगिन, OTP प्राप्त करें, सत्यापित करें</td></tr>
+            <tr><td>One OTP input field</td><td>Six single-character OTP boxes</td></tr>
+            <tr><td>"Get OTP" always clickable</td><td>Disabled until a valid 10-digit number is entered</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fix" style="margin-top:12px;">Rewrote all login selectors and flow logic to match the verified production DOM.</p>
+    </div>
+
+    <div class="callout"><b>Hardening added:</b> installed <span class="mono">pytest-timeout</span> so any future
+      hang is auto-terminated at 30 seconds and reported as a failure — rather than freezing a run indefinitely,
+      as the original defect did.</div>
+  </section>
+
+  <!-- 4. Test coverage -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">4</span>
+      <div><h2>Test coverage</h2><p>19 automated checks across three scenario groups</p></div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Scenario group</th><th class="num">Tests</th><th>Coverage</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>Core login cases <span class="mono">(TC-LOGIN 01–04)</span></td><td class="num">4</td><td>Entry point, OTP trigger, invalid-format rejection, rate-limit check</td><td><span class="pill hi">High</span></td></tr>
+          <tr><td>Positive scenarios</td><td class="num">6</td><td>Login form renders; 5 valid mobile numbers accepted</td><td><span class="pill hi">High</span></td></tr>
+          <tr><td>Negative scenarios</td><td class="num">9</td><td>8 malformed numbers + empty input rejected</td><td><span class="pill med">Medium</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="body-copy">All 19 execute against the live site and pass. Coverage spans the login entry point,
+      mobile-number validation (length, digits, valid starting digit), OTP triggering, and the OTP-request
+      rate-limit guard.</p>
+  </section>
+
+  <!-- 5. Results -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">5</span>
+      <div><h2>Latest run</h2><p>Full suite against production, 09 July 2026</p></div>
+    </div>
+    <pre><code><span class="cmt">$ pytest tests/test_login_from_csv.py -v</span>
+
+collected 19 items
+
+TestLoginFromCSV ..........................  <span style="color:var(--good)">4 PASSED</span>
+TestLoginPositiveScenarios ................  <span style="color:var(--good)">6 PASSED</span>
+TestLoginNegativeScenarios ................  <span style="color:var(--good)">9 PASSED</span>
+
+<span style="color:var(--good)">================= 19 passed in 91.34s =================</span></code></pre>
+    <div class="callout good"><b>Result:</b> 19 passed, 0 failed. A self-contained HTML report is generated at
+      <span class="mono">reports/pytest-report.html</span> after every run for sharing and evidence.</div>
+  </section>
+
+  <!-- 6. Tech stack + run -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">6</span>
+      <div><h2>Technology &amp; how to run</h2><p>Stack and one-command execution</p></div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Component</th><th>Version</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Python</td><td class="num">3.14</td><td>Runtime</td></tr>
+          <tr><td>Playwright</td><td class="num">1.61</td><td>Browser automation engine</td></tr>
+          <tr><td>pytest</td><td class="num">9.1</td><td>Test runner &amp; assertions</td></tr>
+          <tr><td>pytest-asyncio</td><td class="num">1.4</td><td>Async test support</td></tr>
+          <tr><td>pytest-html</td><td class="num">4.2</td><td>HTML reporting</td></tr>
+          <tr><td>pytest-timeout</td><td class="num">2.4</td><td>Hang protection (30s guard)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre><code><span class="cmt"># Run the full login suite</span>
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py -v
+
+<span class="cmt"># Run only smoke-tagged checks</span>
+.venv\Scripts\python -m pytest -m smoke -v</code></pre>
+  </section>
+
+  <!-- 7. Limitations + roadmap -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-no">7</span>
+      <div><h2>Known limits &amp; recommended next steps</h2><p>Honest scope today, and where to invest next</p></div>
+    </div>
+
+    <h3>Current limitations</h3>
+    <ul class="clean">
+      <li><b>OTP verification is not end-to-end.</b> A real code is sent to a physical phone, so tests validate up to
+        "OTP field appears" — not a full logged-in session. A test number or mocked backend is needed to close this.</li>
+      <li><b>Negative tests assert client-side format logic</b> rather than the site's server response. They are
+        correct, but could be strengthened to assert the on-page error state directly.</li>
+      <li><b>Two config files</b> (<span class="mono">pytest.ini</span> and <span class="mono">pyproject.toml</span>)
+        define pytest settings; consolidating to one removes ambiguity.</li>
+    </ul>
+
+    <h3 style="margin-top:24px;">Proposed roadmap</h3>
+    <div class="road">
+      <div class="road-item"><span class="road-when">Near term</span>
+        <div><h3>Close the OTP loop</h3><p>Obtain a test mobile number or mock the OTP service to automate full login-success and post-login journeys.</p></div></div>
+      <div class="road-item"><span class="road-when">Near term</span>
+        <div><h3>CI integration</h3><p>Run the suite automatically on every commit/nightly, with the HTML report published as a build artifact.</p></div></div>
+      <div class="road-item"><span class="road-when">Mid term</span>
+        <div><h3>Broaden coverage</h3><p>Extend Page Objects beyond login — home feed, search, article, subscription — reusing the same POM foundation.</p></div></div>
+      <div class="road-item"><span class="road-when">Mid term</span>
+        <div><h3>Cross-browser</h3><p>Layer Firefox &amp; WebKit onto the existing Chromium runs to catch rendering-specific defects.</p></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Patrika Web QA Automation Framework · v1.0</span>
+    <span>Handover brief · 10 July 2026</span>
+  </footer>
+
+</div>

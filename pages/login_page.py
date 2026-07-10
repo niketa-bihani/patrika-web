@@ -10,17 +10,23 @@ from pages.base_page import BasePage
 class LoginPage(BasePage):
     """Login page object containing selectors and page-specific methods."""
 
-    # Selectors for login modal/page
-    LOGIN_ICON_LOCATOR = "button[aria-label*='login' i], a[href*='login' i], button:has-text('Login')"
-    LOGIN_MODAL_LOCATOR = "div[role='dialog']:has-text('OTP'), .login-modal, .modal-login"
-    MOBILE_INPUT_LOCATOR = "input[type='tel'], input[type='text'][placeholder*='mobile' i], input[placeholder*='phone' i]"
-    GET_OTP_BUTTON_LOCATOR = "button:has-text('Get OTP'), button:has-text('Send OTP'), button[type='submit']:visible"
-    OTP_INPUT_LOCATOR = "input[placeholder*='OTP' i], input[placeholder*='code' i]"
-    VERIFY_OTP_BUTTON_LOCATOR = "button:has-text('Verify'), button:has-text('Confirm'), button[type='submit']:nth-of-type(2)"
-    RESEND_OTP_BUTTON_LOCATOR = "button:has-text('Resend'), button:has-text('Re-send')"
-    ERROR_MESSAGE_LOCATOR = ".error, .error-message, .alert-error, [role='alert']"
-    OTP_SENT_CONFIRMATION_LOCATOR = "text='OTP sent', text='OTP triggered'"
-    RESEND_COOLDOWN_LOCATOR = "button:has-text('Resend') >> nth=0"
+    # Selectors matched against the LIVE patrika.com DOM (verified 2026-07).
+    # NOTE: Login is a SEPARATE PAGE at /login, NOT a modal. The site is in Hindi,
+    # so button labels are Hindi text. The mobile field enables "Get OTP" only
+    # after a valid 10-digit number is entered. OTP is 6 single-char boxes.
+    LOGIN_ICON_LOCATOR = "a[href='/login']"
+    # There is no dialog; the login "form" is considered present when the mobile
+    # input is on screen. Kept the name LOGIN_MODAL_LOCATOR for test compatibility.
+    LOGIN_MODAL_LOCATOR = "input[type='tel'][placeholder='0000000000']"
+    MOBILE_INPUT_LOCATOR = "input[type='tel'][placeholder='0000000000']"
+    GET_OTP_BUTTON_LOCATOR = "button:has-text('OTP प्राप्त करें')"          # "Get OTP"
+    OTP_INPUT_LOCATOR = "input[type='tel'][maxlength='1']"                   # 6 segmented boxes
+    VERIFY_OTP_BUTTON_LOCATOR = "button:has-text('सत्यापित करें')"          # "Verify"
+    CHANGE_NUMBER_BUTTON_LOCATOR = "button:has-text('नंबर बदलें')"          # "Change number"
+    RESEND_OTP_BUTTON_LOCATOR = "button:has-text('OTP')"                    # resend/get-otp area
+    ERROR_MESSAGE_LOCATOR = ".MuiFormHelperText-root.Mui-error, .Mui-error, [role='alert']"
+    OTP_SENT_CONFIRMATION_LOCATOR = "input[type='tel'][maxlength='1']"      # OTP boxes appear
+    RESEND_COOLDOWN_LOCATOR = "button:has-text('OTP')"
 
     def __init__(self, page: Page):
         """
@@ -36,9 +42,11 @@ class LoginPage(BasePage):
         await self.goto("/")
 
     async def click_login_icon(self) -> None:
-        """Click on the login icon/button to open login modal."""
+        """Click the login link; this NAVIGATES to the /login page (no modal)."""
         try:
             await self.click(self.LOGIN_ICON_LOCATOR)
+            # Login is a full page navigation, not a modal — wait for the form.
+            await self.page.wait_for_url("**/login", timeout=10000)
         except Exception as e:
             print(f"Login icon click failed: {e}")
             raise
@@ -74,8 +82,21 @@ class LoginPage(BasePage):
         await self.fill_input(self.MOBILE_INPUT_LOCATOR, mobile_number)
 
     async def click_get_otp(self) -> None:
-        """Click 'Get OTP' button to trigger OTP sending."""
-        await self.click(self.GET_OTP_BUTTON_LOCATOR)
+        """
+        Click 'Get OTP' (OTP प्राप्त करें).
+
+        The site keeps this button DISABLED until a valid 10-digit mobile number
+        is entered. Clicking a disabled button would make Playwright auto-wait
+        until timeout, so we skip the click when it is disabled — the disabled
+        state itself is the site's rejection of an invalid number.
+        """
+        btn = self.page.locator(self.GET_OTP_BUTTON_LOCATOR).first
+        try:
+            if await btn.is_disabled():
+                return
+        except Exception:
+            pass
+        await btn.click()
 
     async def is_otp_sent_confirmation_visible(self, timeout: int = 5000) -> bool:
         """

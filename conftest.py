@@ -39,7 +39,7 @@ async def context(browser: Browser) -> BrowserContext:
         Playwright BrowserContext object
     """
     context = await browser.new_context(
-        base_url=os.getenv("BASE_URL", "http://localhost:3000")
+        base_url=os.getenv("BASE_URL", "https://www.patrika.com")
     )
     yield context
     await context.close()
@@ -69,7 +69,7 @@ def base_url() -> str:
     Returns:
         Base URL from environment or default
     """
-    return os.getenv("BASE_URL", "http://localhost:3000")
+    return os.getenv("BASE_URL", "https://www.patrika.com")
 
 
 @pytest.fixture(autouse=False)
@@ -81,7 +81,7 @@ async def setup_teardown(page: Page):
         page: Page fixture
     """
     # Setup: Navigate to base URL
-    base_url = os.getenv("BASE_URL", "http://localhost:3000")
+    base_url = os.getenv("BASE_URL", "https://www.patrika.com")
     
     yield
     
