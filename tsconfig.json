@@ -10,10 +10,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "types": ["node"],
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true
   },
-  "include": ["tests/**/*", "utils/**/*", "pages/**/*"],
+  "include": ["tests/**/*", "utils/**/*", "pages/**/*", "playwright.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

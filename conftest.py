@@ -21,8 +21,11 @@ async def browser():
     Yields:
         Playwright Browser object
     """
+    # HEADED=true in the environment (.env) runs a visible browser; otherwise headless.
+    headless = os.getenv("HEADED", "false").lower() != "true"
+    slow_mo = int(os.getenv("SLOW_MO", "0"))
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(headless=headless, slow_mo=slow_mo)
         yield browser
         await browser.close()
 
