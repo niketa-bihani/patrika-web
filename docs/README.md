@@ -1,6 +1,6 @@
 # Patrika Web QA Automation Framework
 
-A comprehensive QA automation framework built with Playwright for testing the Patrika Web application.
+A comprehensive QA automation framework built with **Python + Playwright** for testing the Patrika Web application.
 
 ## 📋 Table of Contents
 
@@ -15,8 +15,8 @@ A comprehensive QA automation framework built with Playwright for testing the Pa
 
 ## Prerequisites
 
-- Node.js v18+ ([Download](https://nodejs.org/))
-- npm v9+
+- Python 3.11+ ([Download](https://www.python.org/))
+- pip
 
 ## Installation
 
@@ -25,78 +25,82 @@ A comprehensive QA automation framework built with Playwright for testing the Pa
    cd patrika-web
    ```
 
-2. Install dependencies:
+2. Create and activate a virtual environment:
    ```bash
-   npm install
+   python -m venv .venv
+   .venv\Scripts\activate        # Windows
+   # source .venv/bin/activate   # macOS/Linux
    ```
 
-3. Configure environment variables:
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Install Playwright browsers:
+   ```bash
+   playwright install
+   ```
+
+5. Configure environment variables:
    ```bash
    cp .env.example .env
    ```
 
-4. Update `.env` with your test environment details
+6. Update `.env` with your test environment details
 
 ## Project Structure
 
 ```
 patrika-web/
-├── pages/               # Page Object Models
-│   ├── BasePage.ts      # Base class for all pages
-│   └── HomePage.ts      # Home page object
-├── tests/               # Test specifications
-│   └── example.spec.ts  # Sample test file
-├── utils/               # Utility functions and helpers
-│   └── testHelpers.ts   # Common test utilities
-├── reports/             # Test reports (generated)
-├── playwright.config.ts # Playwright configuration
-├── tsconfig.json        # TypeScript configuration
-├── package.json         # Project dependencies
-└── README.md           # This file
+├── pages/                # Page Object Models
+│   ├── base_page.py      # Base class for all pages
+│   ├── home_page.py      # Home page object
+│   └── login_page.py     # Login page object
+├── tests/                # Test suites
+│   └── test_login_from_csv.py  # Login tests (data-driven from CSV)
+├── utils/                # Utility functions and helpers
+│   ├── csv_loader.py     # CSV test-data loader
+│   └── test_helpers.py   # Common test utilities
+├── test-data/            # Test data
+│   └── LoginTest.csv     # Login test cases
+├── reports/              # Test reports (generated)
+├── conftest.py           # Pytest fixtures (browser, context, page)
+├── pytest.ini            # Pytest configuration
+├── pyproject.toml        # Project metadata & dependencies
+├── requirements.txt      # Python dependencies
+└── README.md             # This file
 ```
 
 ## Running Tests
 
 ### Run all tests
 ```bash
-npm test
+pytest
+```
+
+### Run a specific test file
+```bash
+pytest tests/test_login_from_csv.py -v
 ```
 
 ### Run tests in headed mode (show browser)
+
+Set `HEADED=true` in your `.env` file, then run:
 ```bash
-npm run test:headed
+pytest -v
 ```
 
-### Run tests in debug mode
+### Run tests by marker (tag)
 ```bash
-npm run test:debug
+pytest -m smoke -v         # Smoke tests only
+pytest -m regression -v    # Regression tests only
+pytest -m high_priority -v # High-priority tests only
 ```
 
-### Run tests in UI mode (interactive)
+### Run a single test by name
 ```bash
-npm run test:ui
-```
-
-### Run tests on specific browser
-```bash
-npm run test:chrome    # Chromium only
-npm run test:firefox   # Firefox only
-npm run test:webkit    # WebKit (Safari) only
-```
-
-### Run tests on all browsers
-```bash
-npm run test:all-browsers
-```
-
-### Run specific test file
-```bash
-npx playwright test tests/example.spec.ts
-```
-
-### Run tests with specific tag
-```bash
-npx playwright test --grep @smoke
+pytest tests/test_login_from_csv.py -k "test_login_modal_displays_correctly" -v
 ```
 
 ## Page Object Model
@@ -105,94 +109,108 @@ The framework uses the Page Object Model pattern for better maintainability and 
 
 ### Base Page Class
 
-All page objects extend `BasePage` which provides common methods:
+All page objects extend `BasePage`, which provides common methods:
 
-```typescript
-import { BasePage } from './BasePage';
+```python
+from pages.base_page import BasePage
 
-export class MyPage extends BasePage {
-  readonly mySelector = 'selector';
 
-  async myAction() {
-    await this.click(this.mySelector);
-  }
-}
+class MyPage(BasePage):
+    MY_SELECTOR = "selector"
+
+    async def my_action(self):
+        await self.click(self.MY_SELECTOR)
 ```
 
 ### Available Base Methods
 
-- `goto(url)` - Navigate to URL
-- `fillInput(selector, text)` - Fill input field
-- `click(selector)` - Click element
-- `getText(selector)` - Get element text
-- `isVisible(selector)` - Check visibility
-- `waitForElement(selector, timeout)` - Wait for element
-- `takeScreenshot(filename)` - Screenshot capture
-- `getPageTitle()` - Get page title
-- `getCurrentUrl()` - Get current URL
+- `goto(url)` — Navigate to URL
+- `fill_input(selector, text)` — Fill input field
+- `click(selector)` — Click element
+- `get_text(selector)` — Get element text
+- `is_visible(selector)` — Check visibility
+- `wait_for_element(selector, timeout)` — Wait for element
+- `take_screenshot(filename)` — Screenshot capture
+- `get_page_title()` — Get page title
+- `get_current_url()` — Get current URL
+- `wait_for_load_state(state, timeout)` — Wait for load state
+- `get_attribute(selector, attribute)` — Get element attribute
+- `press_key(key)` — Press a keyboard key
+- `reload()` / `go_back()` / `go_forward()` — Navigation controls
 
 ## Writing Tests
 
 ### Basic Test Structure
 
-```typescript
-import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
+```python
+import pytest
+from playwright.async_api import Page
+from pages.login_page import LoginPage
 
-test.describe('Home Page', () => {
-  let homePage: HomePage;
 
-  test.beforeEach(async ({ page }) => {
-    homePage = new HomePage(page);
-  });
+class TestLogin:
+    @pytest.fixture
+    async def login_page(self, page: Page):
+        login_page = LoginPage(page)
+        await login_page.wait_for_page_load()
+        yield login_page
 
-  test('should load home page', async () => {
-    await homePage.navigateToHome();
-    expect(await homePage.isHeaderVisible()).toBeTruthy();
-  });
-});
+    @pytest.mark.smoke
+    async def test_should_open_login(self, login_page: LoginPage):
+        await login_page.navigate_to_home()
+        await login_page.click_login_icon()
+        assert await login_page.is_login_modal_visible()
 ```
 
 ### Test Naming Conventions
 
-- Use descriptive test names
-- Prefix related tests with group names
-- Use tags for categorization: `@smoke`, `@regression`, `@critical`
+- Test files: `test_*.py`
+- Test classes: `Test*`
+- Test functions: `test_*`
+- Use markers for categorization: `@pytest.mark.smoke`, `@pytest.mark.regression`, `@pytest.mark.critical`
 
 ### Using Test Helpers
 
-```typescript
-import { logStep, retryWithBackoff } from '../utils/testHelpers';
+```python
+from utils.test_helpers import log_step, get_random_string
+from utils.csv_loader import CSVDataLoader
 
-test('example test', async () => {
-  logStep(1, 'Navigate to page');
-  // ...
-  
-  logStep(2, 'Perform action');
-  // ...
-});
+
+async def test_example():
+    log_step(1, "Navigate to page")
+    # ...
+
+    log_step(2, "Perform action")
+    # ...
 ```
 
 ## Configuration
 
-### playwright.config.ts
+### conftest.py
+
+Defines the core Playwright fixtures:
+
+- **browser** — session-scoped Chromium instance (honors `HEADED` and `SLOW_MO` from `.env`)
+- **context** — per-test browser context with `base_url` configured
+- **page** — per-test page
+- **base_url**, **test_timeout**, **headless** — helper fixtures
+
+### pytest.ini
 
 Key configuration options:
 
-- **testDir**: Directory containing test files
-- **fullyParallel**: Run tests in parallel
-- **retries**: Number of retries on CI
-- **workers**: Number of worker processes
-- **reporter**: Test reporters (html, json, junit, list)
-- **use.baseURL**: Base URL for tests
-- **projects**: Browser configurations
+- **testpaths / python_files / python_classes / python_functions** — test discovery rules
+- **asyncio_mode** — set to `auto` for async tests
+- **addopts** — default CLI options (verbose, HTML report, strict markers)
+- **markers** — registered test markers
+- **timeout** — per-test timeout guard (via `pytest-timeout`)
 
 ### Environment Variables
 
 Create a `.env` file (use `.env.example` as template):
 
 ```env
-BASE_URL=http://localhost:3000
+BASE_URL=https://www.patrika.com/
 BROWSER=chromium
 HEADED=false
 SLOW_MO=0
@@ -205,61 +223,54 @@ DEBUG=false
 
 ### HTML Report
 
-After test execution, view the HTML report:
+A self-contained HTML report is generated automatically after every run at:
 
-```bash
-npm run report
+```
+reports/pytest-report.html
 ```
 
-### Report Formats
+### Log File
 
-- **HTML Report**: `playwright-report/index.html`
-- **JSON Report**: `reports/test-results.json`
-- **JUnit Report**: `reports/junit.xml`
+Execution logs are written to:
+
+```
+reports/pytest.log
+```
 
 ### Screenshots
 
-Screenshots are automatically saved to `reports/screenshots/` on test failures.
+Use `take_screenshot(filename)` from `BasePage` to capture screenshots during a test.
 
 ## Best Practices
 
 1. **Use Page Objects**: Always use page objects instead of hardcoded selectors
 2. **Descriptive Names**: Use clear, descriptive names for tests and page objects
 3. **Waits**: Use explicit waits instead of hard sleeps
-4. **Data Management**: Use test helpers for test data generation
+4. **Data Management**: Use `CSVDataLoader` and test helpers for test data
 5. **Assertions**: Keep assertions focused and meaningful
-6. **Reusability**: Create helper methods in BasePage for common actions
-7. **Tags**: Use tags to organize tests by type or feature
-8. **Cleanup**: Use beforeEach/afterEach for setup and teardown
-
-## Continuous Integration
-
-The framework is CI-ready:
-
-- Tests run sequentially on CI (configurable)
-- Automatic retries enabled on CI failures
-- Reports generated in standard formats
-- Screenshots captured on failures
+6. **Reusability**: Create helper methods in `BasePage` for common actions
+7. **Markers**: Use markers to organize tests by type or priority
+8. **Fixtures**: Use pytest fixtures for setup and teardown
 
 ## Troubleshooting
 
 ### Tests timeout
-- Increase `timeout` in `playwright.config.ts`
-- Check if application is running on configured URL
+- Increase `timeout` in `pytest.ini`
+- Check if the application is reachable at the configured `BASE_URL`
 
 ### Element not found
-- Use debug mode: `npm run test:debug`
-- Use codegen to record interactions: `npm run codegen`
+- Run headed to watch the browser: set `HEADED=true` in `.env`
+- Use Playwright codegen to record interactions: `playwright codegen https://www.patrika.com`
 
-### Browser crashes
-- Run single worker: `npx playwright test --workers=1`
+### Browser issues
+- Reinstall browsers: `playwright install`
 - Clear browser cache and data
 
 ## Additional Resources
 
-- [Playwright Documentation](https://playwright.dev/)
-- [Playwright Test Guide](https://playwright.dev/docs/intro)
-- [Best Practices](https://playwright.dev/docs/best-practices)
+- [Playwright for Python](https://playwright.dev/python/)
+- [Playwright Python Test Guide](https://playwright.dev/python/docs/intro)
+- [pytest Documentation](https://docs.pytest.org/)
 
 ## License
 

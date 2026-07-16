@@ -6,9 +6,11 @@
 
 ```
 reports/
-├── pytest-report.html           (36 KB) - Interactive HTML Report
-├── execution_summary.txt        (4.5 KB) - Text Execution Summary  
-├── pytest.log                   (Empty) - Test Execution Log
+├── pytest-report.html           (~53 KB) - Interactive HTML Report
+├── execution_summary.txt        (4.5 KB) - Text Execution Summary
+├── junit.xml                    (JUnit XML) - CI-friendly results
+├── test-results.json            (JSON)     - Machine-readable results
+├── pytest.log                   (Log)      - Test Execution Log
 └── screenshots/                 (Directory) - Failure Screenshots
 ```
 
@@ -16,38 +18,45 @@ reports/
 
 ## 📈 LATEST TEST EXECUTION RESULTS
 
-### Full Test Suite Execution
+### Full Login Suite Execution
 
-**Date:** 2026-07-09  
-**Framework:** Pytest 9.1.1 + Playwright  
-**Platform:** Windows 10 (Python 3.14.6)  
-**Duration:** 0.30 - 0.47 seconds
+**Date:** 2026-07-09
+**Framework:** Pytest 9.1.1 + Playwright (async)
+**Platform:** Windows 10 (Python 3.14.6)
+**Target:** Live site — www.patrika.com
+**Duration:** 91.34 seconds
 
 ```
 ╔════════════════════════════════════════╗
 ║     TEST EXECUTION SUMMARY             ║
 ╠════════════════════════════════════════╣
-║  Total Tests:           10             ║
-║  ✅ Passed:            10 (100%)       ║
+║  Total Tests:           19             ║
+║  ✅ Passed:            19 (100%)       ║
 ║  ❌ Failed:             0 (0%)         ║
 ║  ⏭️  Skipped:            0 (0%)         ║
-║  ⚠️  Warnings:           2              ║
 ╚════════════════════════════════════════╝
 ```
 
 ### Test Execution Timeline
 
 ```
-[ 10%] ✅ test_demo_passing_test
-[ 20%] ✅ test_demo_string_operations
-[ 30%] ✅ test_demo_assertions
-[ 40%] ✅ test_demo_comparison
-[ 50%] ✅ test_demo_conditional_logic
-[ 60%] ✅ test_demo_list_operations
-[ 70%] ✅ test_framework_helpers
-[ 80%] ✅ test_framework_markers
-[ 90%] ✅ test_test_organization
-[100%] ✅ test_naming_conventions
+TestLoginFromCSV
+  ✅ test_tc_login_01_login_entry_point_visible
+  ✅ test_tc_login_02_otp_triggered_for_valid_mobile
+  ✅ test_tc_login_03_invalid_mobile_format_rejected
+  ✅ test_tc_login_04_otp_rate_limit_check
+
+TestLoginPositiveScenarios
+  ✅ test_login_modal_displays_correctly
+  ✅ test_valid_mobile_numbers[9876543210]
+  ✅ test_valid_mobile_numbers[9123456789]
+  ✅ test_valid_mobile_numbers[8765432109]
+  ✅ test_valid_mobile_numbers[7654321098]
+  ✅ test_valid_mobile_numbers[6543210987]
+
+TestLoginNegativeScenarios
+  ✅ test_invalid_mobile_numbers (8 malformed inputs)
+  ✅ test_login_with_empty_input
 ```
 
 ---
@@ -58,37 +67,37 @@ reports/
 **Command:** `.venv\Scripts\python -m pytest -m smoke`
 
 ```
-✅ 4 tests selected (6 deselected)
-   - test_demo_passing_test                [25%]
-   - test_demo_assertions                  [50%]
-   - test_demo_list_operations             [75%]
-   - test_framework_markers                [100%]
+✅ 3 tests selected
+   - test_tc_login_01_login_entry_point_visible
+   - test_tc_login_02_otp_triggered_for_valid_mobile
+   - test_login_modal_displays_correctly
 
-Result: 4 passed in 0.31s ✅
+Result: 3 passed ✅
 ```
 
 ### Regression Test Run
 **Command:** `.venv\Scripts\python -m pytest -m regression`
 
 ```
-✅ 3 tests selected (7 deselected)
-   - test_demo_string_operations
-   - test_demo_conditional_logic
-   - test_framework_helpers
+✅ 16 tests selected
+   - test_tc_login_03_invalid_mobile_format_rejected
+   - test_tc_login_04_otp_rate_limit_check
+   - test_valid_mobile_numbers      (5 parametrized cases)
+   - test_invalid_mobile_numbers    (8 parametrized cases)
+   - test_login_with_empty_input
 
-Result: 3 passed ✅
+Result: 16 passed ✅
 ```
 
-### Critical Test Run
-**Command:** `.venv\Scripts\python -m pytest -m critical`
+### High-Priority Test Run
+**Command:** `.venv\Scripts\python -m pytest -m high_priority`
 
 ```
-✅ 3 tests selected (7 deselected)
-   - test_demo_comparison
-   - test_demo_list_operations (also @smoke)
-   - test_test_organization
+✅ 2 tests selected
+   - test_tc_login_01_login_entry_point_visible
+   - test_tc_login_02_otp_triggered_for_valid_mobile
 
-Result: 3 passed ✅
+Result: 2 passed ✅
 ```
 
 ---
@@ -97,8 +106,7 @@ Result: 3 passed ✅
 
 ### 1. **pytest-report.html** (Interactive HTML Report)
 
-**File Size:** 36 KB  
-**Format:** HTML5 with embedded CSS & JavaScript  
+**Format:** HTML5 with embedded CSS & JavaScript (self-contained)
 **Content:**
 - Test execution timeline with status indicators
 - Detailed test information (class, method, duration)
@@ -132,7 +140,6 @@ xdg-open reports/pytest-report.html
 
 ### 2. **execution_summary.txt** (Text Summary)
 
-**File Size:** 4.5 KB  
 **Format:** Plain text
 **Content:**
 - Test session header information
@@ -147,19 +154,28 @@ xdg-open reports/pytest-report.html
 ============================= test session starts =============================
 platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
 ...
-collected 10 items
+collected 19 items
 
-tests/test_demo.py::TestReportDemo::test_demo_passing_test PASSED [ 10%]
+tests/test_login_from_csv.py::TestLoginFromCSV::test_tc_login_01_login_entry_point_visible PASSED
 ...
 
-======================== 10 passed, 2 warnings in 0.30s =========================
+======================== 19 passed in 91.34s =========================
 ```
 
 ---
 
-### 3. **pytest.log** (Detailed Execution Log)
+### 3. **junit.xml / test-results.json** (Machine-Readable Results)
 
-**File Size:** Dynamic (captures all output)  
+**Format:** JUnit XML and JSON
+**Content:**
+- Structured pass/fail results per test
+- Durations and test IDs
+- Suitable for dashboards or downstream tooling
+
+---
+
+### 4. **pytest.log** (Detailed Execution Log)
+
 **Format:** Plain text log
 **Content:**
 - Detailed execution trace
@@ -167,21 +183,20 @@ tests/test_demo.py::TestReportDemo::test_demo_passing_test PASSED [ 10%]
 - Log entries from utilities
 - Timing information
 
-**Current Status:** Empty (no log output captured)  
-**To Enable:** Set `log_cli = true` in `pytest.ini`
+**To Enable Live Logging:** Set `log_cli = true` in `pytest.ini`
 
 ---
 
 ## 🎯 HOW TO GENERATE REPORTS
 
-### Standard Execution (Generates HTML + Text)
+### Standard Execution (Generates HTML + Log)
 
 ```bash
 # Activate virtual environment
 .venv\Scripts\activate
 
-# Run tests with configured report generation
-.venv\Scripts\python -m pytest tests/test_demo.py
+# Run the login suite with configured report generation
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py
 
 # Reports automatically created in: reports/
 ```
@@ -192,10 +207,7 @@ tests/test_demo.py::TestReportDemo::test_demo_passing_test PASSED [ 10%]
 # HTML Report Only
 .venv\Scripts\python -m pytest tests/ --html=reports/report.html --self-contained-html
 
-# HTML Report + JSON
-.venv\Scripts\python -m pytest tests/ --html=reports/report.html --json-report
-
-# HTML Report + JUnit XML (for CI/CD)
+# HTML Report + JUnit XML
 .venv\Scripts\python -m pytest tests/ --html=reports/report.html --junit-xml=reports/junit.xml
 
 # With Console Output
@@ -217,13 +229,13 @@ tests/test_demo.py::TestReportDemo::test_demo_passing_test PASSED [ 10%]
 Each test report includes:
 
 ```
-Test Name:        test_demo_passing_test
-Test Class:       TestReportDemo
-Test File:        tests/test_demo.py
+Test Name:        test_tc_login_01_login_entry_point_visible
+Test Class:       TestLoginFromCSV
+Test File:        tests/test_login_from_csv.py
 Status:           PASSED ✅
-Duration:         0.001s
-Markers:          smoke
-Test ID:          tests/test_demo.py::TestReportDemo::test_demo_passing_test
+Duration:         ~4.8s
+Markers:          smoke, high_priority
+Test ID:          tests/test_login_from_csv.py::TestLoginFromCSV::test_tc_login_01_login_entry_point_visible
 ```
 
 ### Environment Information Captured
@@ -238,6 +250,7 @@ Plugins Installed:
   - pytest-html (4.2.0) - HTML report generation
   - pytest-metadata (3.1.1) - Metadata capture
   - pytest-asyncio (1.4.0) - Async test support
+  - pytest-timeout (2.4.0) - Hang protection (30s guard)
 ```
 
 ---
@@ -253,7 +266,7 @@ Edit: `pytest.ini`
 # Change HTML report location
 addopts = --html=reports/custom-report.html
 
-# Add JUnit XML for CI/CD
+# Add JUnit XML for machine-readable results
 addopts = --junit-xml=reports/junit.xml
 
 # Change report style
@@ -266,8 +279,8 @@ addopts = --durations=5
 markers =
     smoke: Fast smoke tests
     regression: Full regression suite
-    critical: Critical path tests
-    custom: Custom marker
+    high_priority: High-priority tests
+    medium_priority: Medium-priority tests
 ```
 
 ### Report Styling
@@ -286,33 +299,31 @@ The HTML report includes:
 ### Test Execution Statistics
 
 ```
-Total Tests Collected:    10
-Tests Executed:          10
-Tests Passed:            10 (100%)
+Total Tests Collected:    19
+Tests Executed:          19
+Tests Passed:            19 (100%)
 Tests Failed:             0 (0%)
 Tests Skipped:            0 (0%)
 
-Execution Time:          0.30 - 0.47 seconds
-Average Test Duration:   0.03 - 0.047 seconds per test
-
-Configuration Warnings:  2 (asyncio_mode, timeout settings)
+Execution Time:          91.34 seconds (live site)
+Average Test Duration:   ~4.8 seconds per test
 ```
 
 ### By Test Class
 
 ```
-TestReportDemo:      6 tests - 100% pass rate
-TestReportFeatures:  2 tests - 100% pass rate  
-TestReportStructure: 2 tests - 100% pass rate
+TestLoginFromCSV:          4 tests - 100% pass rate
+TestLoginPositiveScenarios: 6 tests - 100% pass rate
+TestLoginNegativeScenarios: 9 tests - 100% pass rate
 ```
 
 ### By Marker/Tag
 
 ```
-@smoke:              4 tests - 100% pass rate
-@regression:         3 tests - 100% pass rate
-@critical:           3 tests - 100% pass rate
-(No marker):         3 tests - 100% pass rate
+@smoke:            3 tests - 100% pass rate
+@regression:      16 tests - 100% pass rate
+@high_priority:    2 tests - 100% pass rate
+@medium_priority:  2 tests - 100% pass rate
 ```
 
 ---
@@ -330,12 +341,10 @@ TestReportStructure: 2 tests - 100% pass rate
 - Configuration information
 - Plugin information
 - Summary statistics
+- JUnit XML + JSON output
 
 ### 🔜 Available Options
 
-- JUnit XML for CI/CD integration
-- JSON report format
-- Custom CSS styling
 - Screenshots on failure (for Playwright tests)
 - Video recordings (advanced)
 - Allure reports (with pytest-allure)
@@ -343,69 +352,11 @@ TestReportStructure: 2 tests - 100% pass rate
 
 ---
 
-## 🎯 CI/CD INTEGRATION
-
-### GitHub Actions Example
-
-```yaml
-name: Run Tests
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - run: pip install -r requirements.txt
-      - run: playwright install
-      - run: pytest --html=reports/report.html --self-contained-html --junit-xml=reports/junit.xml
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: test-reports
-          path: reports/
-```
-
-### Jenkins Pipeline Example
-
-```groovy
-pipeline {
-    agent any
-    stages {
-        stage('Setup') {
-            steps {
-                bat '.venv\\Scripts\\pip install -r requirements.txt'
-                bat '.venv\\Scripts\\playwright install'
-            }
-        }
-        stage('Test') {
-            steps {
-                bat '.venv\\Scripts\\python -m pytest --html=reports/report.html --junit-xml=reports/junit.xml'
-            }
-        }
-        stage('Report') {
-            steps {
-                junit 'reports/junit.xml'
-                publishHTML([
-                    reportDir: 'reports',
-                    reportFiles: 'pytest-report.html',
-                    reportName: 'Test Report'
-                ])
-            }
-        }
-    }
-}
-```
-
----
-
 ## 📞 TROUBLESHOOTING REPORTS
 
 ### HTML Report Not Generated
 
-**Problem:** Report file doesn't exist  
+**Problem:** Report file doesn't exist
 **Solution:**
 1. Check `pytest-html` is installed: `.venv\Scripts\pip list | findstr pytest-html`
 2. Verify report path in `pytest.ini`
@@ -414,7 +365,7 @@ pipeline {
 
 ### Report Shows Warnings
 
-**Problem:** Configuration warnings in output  
+**Problem:** Configuration warnings in output
 **Solution:**
 1. Update `pytest.ini` with missing options
 2. Install missing pytest plugins
@@ -422,7 +373,7 @@ pipeline {
 
 ### Report Won't Open in Browser
 
-**Problem:** Error opening HTML file  
+**Problem:** Error opening HTML file
 **Solution:**
 1. Use full absolute path
 2. Check file isn't corrupted (view in text editor)
@@ -435,29 +386,28 @@ pipeline {
 
 - [Pytest Documentation](https://docs.pytest.org/)
 - [Pytest-HTML Plugin](https://pytest-html.readthedocs.io/)
-- [Playwright Documentation](https://playwright.dev/python/)
-- [Framework README](./README_PYTHON.md)
+- [Playwright for Python](https://playwright.dev/python/)
+- [Framework README](./README.md)
 - [Test Report Structure](./TEST_REPORT_STRUCTURE.md)
 
 ---
 
 ## ✅ REPORT SUMMARY
 
-**Status:** ✅ Framework reporting fully functional  
-**Last Generated:** 2026-07-09  
-**Total Reports:** 3 files (HTML, TXT, LOG)  
-**Test Success Rate:** 100%  
-**Ready for:** Development & Production  
+**Status:** ✅ Framework reporting fully functional
+**Last Generated:** 2026-07-09
+**Test Success Rate:** 100% (19/19)
+**Ready for:** Development & Production
 
 **Next Steps:**
 1. Review HTML report: `reports/pytest-report.html`
 2. Configure test environment in `.env`
-3. Create page objects for your features
+3. Create page objects for additional features
 4. Write feature-specific tests
 5. Run full test suite: `.venv\Scripts\python -m pytest`
 
 ---
 
-*Framework Version: 1.0.0*  
-*Last Updated: 2026-07-09*  
+*Framework Version: 1.0.0*
+*Last Updated: 2026-07-14*
 *Status: Production Ready ✅*

@@ -1,0 +1,1050 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - paragraph [ref=e5]: 16 जुलाई 2026,
+      - paragraph [ref=e6]: गुरुवार
+    - link [ref=e7] [cursor=pointer]:
+      - /url: /
+      - img "Patrika Logo" [ref=e8]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - link [ref=e13] [cursor=pointer]:
+        - /url: /
+        - paragraph [ref=e14]: ताजा खबरें
+      - link [ref=e17] [cursor=pointer]:
+        - /url: /state-news
+        - paragraph [ref=e18]: राज्य
+      - link [ref=e21] [cursor=pointer]:
+        - /url: /topic/monsoon
+        - paragraph [ref=e22]: Monsoon
+      - link [ref=e25] [cursor=pointer]:
+        - /url: /topic/fifa-world-cup
+        - paragraph [ref=e26]: Fifa World Cup 2026
+      - link [ref=e29] [cursor=pointer]:
+        - /url: /topic/iran-israel-war
+        - paragraph [ref=e30]: US Israel-Iran War
+      - link [ref=e33] [cursor=pointer]:
+        - /url: /patrika-special
+        - paragraph [ref=e34]: पत्रिका स्पेशल
+      - link [ref=e37] [cursor=pointer]:
+        - /url: /topic/karpoor-chandra-kulish-100th-birth-year
+        - paragraph [ref=e38]: कुलिश जन्मशती वर्ष
+      - link [ref=e41] [cursor=pointer]:
+        - /url: /national-news
+        - paragraph [ref=e42]: राष्ट्रीय
+      - link [ref=e45] [cursor=pointer]:
+        - /url: /business-news
+        - paragraph [ref=e46]: बिजनेस
+      - link [ref=e49] [cursor=pointer]:
+        - /url: /entertainment-news
+        - paragraph [ref=e50]: मनोरंजन
+      - link [ref=e53] [cursor=pointer]:
+        - /url: /astrology-and-spirituality
+        - paragraph [ref=e54]: धर्म
+      - link [ref=e57] [cursor=pointer]:
+        - /url: /health-news
+        - paragraph [ref=e58]: स्वास्थ्य
+      - link [ref=e61] [cursor=pointer]:
+        - /url: /sports-news
+        - paragraph [ref=e62]: खेल
+      - link [ref=e65] [cursor=pointer]:
+        - /url: /political-news
+        - paragraph [ref=e66]: राजनीति
+      - link [ref=e69] [cursor=pointer]:
+        - /url: /world-news
+        - paragraph [ref=e70]: विश्व
+      - link [ref=e73] [cursor=pointer]:
+        - /url: /education-news
+        - paragraph [ref=e74]: शिक्षा
+      - link [ref=e77] [cursor=pointer]:
+        - /url: /opinion
+        - paragraph [ref=e78]: ओपिनियन
+      - link [ref=e81] [cursor=pointer]:
+        - /url: /latest-technology
+        - paragraph [ref=e82]: टेक
+      - link [ref=e85] [cursor=pointer]:
+        - /url: /automobile-news
+        - paragraph [ref=e86]: ऑटोमोबाइल
+      - link [ref=e89] [cursor=pointer]:
+        - /url: /lifestyle-news
+        - paragraph [ref=e90]: लाइफस्टाइल
+    - generic [ref=e92] [cursor=pointer]:
+      - link "शॉर्ट्स_icon शॉर्ट्स" [ref=e93]:
+        - /url: /short-video
+        - img "शॉर्ट्स_icon" [ref=e94]
+        - generic [ref=e95]: शॉर्ट्स
+      - link [ref=e96]:
+        - /url: https://epatrika.com/
+        - img "ई-पेपर_icon" [ref=e97]
+        - paragraph [ref=e98]: ई-पेपर
+  - generic [ref=e103]:
+    - generic [ref=e106]:
+      - heading "Latest Hindi News" [level=1] [ref=e107]
+      - generic [ref=e110]:
+        - link [ref=e111] [cursor=pointer]:
+          - /url: /world-news/iraqi-prime-minister-al-zaidi-arrives-in-washington-amidst-us-strikes-on-iran-what-did-trump-say-20751573
+          - heading "ईरान पर अमेरिकी हमले के बीच वाशिंगटन पहुंचे इराकी प्रधानमंत्री अली अल जैदी, क्या बोले ट्रंप?" [level=3] [ref=e113]
+        - generic [ref=e114]:
+          - link [ref=e115] [cursor=pointer]:
+            - /url: /world-news
+            - paragraph [ref=e116]: विदेश
+          - generic:
+            - paragraph
+      - separator [ref=e117]
+      - generic [ref=e120]:
+        - link [ref=e121] [cursor=pointer]:
+          - /url: /national-news/hyderabad-school-kalma-controversy-t-raja-singh-statement-owaisi-constituency-20751564
+          - heading "‘दूसरी क्लास के बच्चे के साथ यह हरकत बेहद शर्मनाक है’, हैदराबाद स्कूल में हिंदू छात्र को होमवर्क में ‘कलमा’ देने पर भड़के विधायक टी. राजा सिंह" [level=3] [ref=e123]
+        - generic [ref=e124]:
+          - link [ref=e125] [cursor=pointer]:
+            - /url: /national-news
+            - paragraph [ref=e126]: राष्ट्रीय
+          - generic:
+            - paragraph
+      - separator [ref=e127]
+      - generic [ref=e130]:
+        - link [ref=e131] [cursor=pointer]:
+          - /url: /bhilwara-news/rajasthan-corruption-asi-sentenced-to-4-years-in-12-year-old-bribery-case-20751517
+          - 'heading "Rajasthan Corruption: रिश्वत में 1000 रुपए और मुर्गा लिया, 12 साल पुराने मामले में ASI को 4 साल की सजा" [level=3] [ref=e133]'
+        - generic [ref=e134]:
+          - link [ref=e135] [cursor=pointer]:
+            - /url: /bhilwara-news
+            - paragraph [ref=e136]: भीलवाड़ा
+          - generic:
+            - paragraph
+      - separator [ref=e137]
+      - generic [ref=e140]:
+        - link [ref=e141] [cursor=pointer]:
+          - /url: /kanpur-news/maharajpur-kanpur-harimohan-yadav-murder-case-20751307
+          - heading "कानपुर में ट्यूबवेल के पास मिला किसान का शव, गले पर धारदार हथियार के निशान,गांव के तीन लोगों पर हत्या का आरोप" [level=3] [ref=e143]
+        - generic [ref=e144]:
+          - link [ref=e145] [cursor=pointer]:
+            - /url: /kanpur-news
+            - paragraph [ref=e146]: कानपुर
+          - generic:
+            - paragraph
+      - separator [ref=e147]
+      - generic [ref=e150]:
+        - link [ref=e151] [cursor=pointer]:
+          - /url: /national-news/jagannath-rath-yatra-2026-history-significance-beliefs-traditions-puri-odisha-20751534
+          - 'heading "Jagannath Puri: भगवान जगन्ननाथ के 3 अलग-अलग रथों की विशिष्ट परंपरा! इस बार यात्रा के लिए क्या तैयारी?" [level=3] [ref=e153]'
+        - generic [ref=e154]:
+          - link [ref=e155] [cursor=pointer]:
+            - /url: /national-news
+            - paragraph [ref=e156]: राष्ट्रीय
+          - generic:
+            - paragraph
+      - separator [ref=e157]
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - link [ref=e162] [cursor=pointer]:
+              - /url: /national-news/abhijit-deepke-four-year-old-post-about-rahul-gandhi-goes-viral-called-his-bharat-jodo-yatra-a-travel-vlog-20751364
+              - 'heading "CJP Protest: अभिजीत दीपके का राहुल गांधी पर चार साल पुराना पोस्ट वायरल, भारत जोड़ों यात्रा को बताया था ट्रैवल व्लॉग" [level=2] [ref=e164]'
+            - generic [ref=e165]:
+              - link [ref=e166] [cursor=pointer]:
+                - /url: /national-news
+                - paragraph [ref=e167]: राष्ट्रीय
+              - generic:
+                - paragraph
+            - img "Abhijit Deepke and Rahul Gandhi" [ref=e169] [cursor=pointer]
+          - separator [ref=e170]
+        - generic [ref=e173]:
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - link [ref=e177] [cursor=pointer]:
+                - /url: /national-news/sonam-wangchuk-has-ruled-out-ending-his-indefinite-hunger-strike-20751401
+                - 'heading "Sonam Wangchuk Hunger Strike: सोनम वांगचुक बोले- ‘मुझसे जल्द भूख हड़ताल खत्म करने को मत कहिए, इससे सरकार को गलत संदेश जाएगा’" [level=3] [ref=e179]'
+              - generic [ref=e180]:
+                - link [ref=e181] [cursor=pointer]:
+                  - /url: /national-news
+                  - paragraph [ref=e182]: राष्ट्रीय
+                - generic:
+                  - paragraph
+            - img "Sonam Wangchuk on hunger strike." [ref=e184] [cursor=pointer]
+          - separator [ref=e185]
+          - generic [ref=e187]:
+            - generic [ref=e188]:
+              - link [ref=e189] [cursor=pointer]:
+                - /url: /crime-news/delhi-high-court-cancels-teacher-bail-janakpuri-school-sexual-assault-case-20751311
+                - heading "‘3 साल की बच्ची है, सारी बातें नहीं बता सकती’, दुष्कर्म मामले में हाई कोर्ट ने रद्द की महिला टीचर की जमानत" [level=3] [ref=e191]
+              - generic [ref=e192]:
+                - link [ref=e193] [cursor=pointer]:
+                  - /url: /crime-news
+                  - paragraph [ref=e194]: क्राइम
+                - generic:
+                  - paragraph
+            - img "Delhi High Court on Delhi school POCSO case" [ref=e196] [cursor=pointer]
+          - separator [ref=e197]
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - link [ref=e201] [cursor=pointer]:
+                - /url: /mumbai-news/two-injured-in-scuffle-aboard-mumbai-local-train-both-hospitalised-20751316
+                - 'heading "मुंबई लोकल में सीट को लेकर विवाद: दो यात्रियों में मारपीट, एक के सिर में आई गंभीर चोट" [level=3] [ref=e203]'
+              - generic [ref=e204]:
+                - link [ref=e205] [cursor=pointer]:
+                  - /url: /mumbai-news
+                  - paragraph [ref=e206]: मुंबई
+                - generic:
+                  - paragraph
+            - img "Mumbai Local Train Fight" [ref=e208] [cursor=pointer]
+      - generic [ref=e209]:
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - link [ref=e212] [cursor=pointer]:
+              - /url: /business-news/hcl-tech-tech-mahindra-maruti-suzuki-bajaj-finance-and-mahindra-and-mahindra-share-price-rise-20751332
+              - 'heading "HCL Tech Share Price: M&M, Maruti Suzuki और Bajaj Finance के शेयरों में आई खरिदारी, जानिए 1 हफ्ते का रिटर्न" [level=2] [ref=e214]'
+            - generic [ref=e215]:
+              - link [ref=e216] [cursor=pointer]:
+                - /url: /business-news
+                - paragraph [ref=e217]: कारोबार
+              - generic:
+                - paragraph
+            - img "Maruti Suzuki Share Price" [ref=e219] [cursor=pointer]
+          - separator [ref=e220]
+        - generic [ref=e221]:
+          - generic [ref=e223]:
+            - generic [ref=e224]:
+              - link [ref=e225] [cursor=pointer]:
+                - /url: /national-news/india-innocence-in-nijjar-killing-case-proven-former-ambassador-sanjay-verma-says-canada-should-apologize-20751176
+                - heading "निज्जर हत्याकांड में भारत की बेगुनाही साबित, पूर्व राजदूत संजय वर्मा बोले- कनाडा को मांगनी चाहिए माफी" [level=3] [ref=e227]
+              - generic [ref=e228]:
+                - link [ref=e229] [cursor=pointer]:
+                  - /url: /national-news
+                  - paragraph [ref=e230]: राष्ट्रीय
+                - generic:
+                  - paragraph
+            - img "Sanjay Verma, Former Ambassador" [ref=e232] [cursor=pointer]
+          - separator [ref=e233]
+          - generic [ref=e235]:
+            - generic [ref=e236]:
+              - link [ref=e237] [cursor=pointer]:
+                - /url: /football-news/thomas-tuchel-reaction-england-vs-argentina-match-in-fifa-world-cup-2026-20751154
+                - heading "FIFA World Cup 2026 के सेमीफाइनल में किस गलती की वजह से हारी इंग्लैंड, कोच ने बताई कहां हुई चूक" [level=3] [ref=e239]
+              - generic [ref=e240]:
+                - link [ref=e241] [cursor=pointer]:
+                  - /url: /football-news
+                  - paragraph [ref=e242]: फुटबॉल
+                - generic:
+                  - paragraph
+            - img "England team in FIFA World Cup 2026" [ref=e244] [cursor=pointer]
+          - separator [ref=e245]
+          - generic [ref=e247]:
+            - generic [ref=e248]:
+              - link [ref=e249] [cursor=pointer]:
+                - /url: /crime-news/karnataka-doctor-kiran-honannavar-murder-dr-wife-questioning-20751185
+                - heading "न बाहरी शख्स की एंट्री, न लूटपाट… कर्नाटक में घर के अंदर डॉक्टर का मर्डर, बेटा गंभीर, पत्नी दे रही गोलमोल जवाब" [level=3] [ref=e251]
+              - generic [ref=e252]:
+                - link [ref=e253] [cursor=pointer]:
+                  - /url: /crime-news
+                  - paragraph [ref=e254]: क्राइम
+                - generic:
+                  - paragraph
+            - img "Karnataka Dharwad Dr Kiran Honannavar killed" [ref=e256] [cursor=pointer]
+      - generic [ref=e260]:
+        - heading "Trending" [level=2] [ref=e267]
+        - generic [ref=e268]:
+          - tab [selected] [ref=e269] [cursor=pointer]:
+            - paragraph [ref=e270]: Cockroach Janta Party
+          - tab [ref=e271] [cursor=pointer]:
+            - paragraph [ref=e272]: US Israel-Iran War
+          - tab [ref=e273] [cursor=pointer]:
+            - paragraph [ref=e274]: LPG क्राइसिस
+          - tab [ref=e275] [cursor=pointer]:
+            - paragraph [ref=e276]: Gold Silver Price Today
+          - tab [ref=e277] [cursor=pointer]:
+            - paragraph [ref=e278]: Rashifal
+        - generic [ref=e279]:
+          - link [ref=e280] [cursor=pointer]:
+            - /url: /lucknow-news/shankaracharya-swami-avimukteshwaranand-statement-on-sonam-wangchuk-hunger-strike-20749320
+            - heading "सोनम वांगचुक के समर्थन में उतरे शंकराचार्य स्वामी अविमुक्तेश्वरानंद, बोले- अनशन से नुकसान हुआ तो कौन करेगा भरपाई" [level=3] [ref=e282]
+          - generic [ref=e283]:
+            - link [ref=e284] [cursor=pointer]:
+              - /url: /lucknow-news
+              - paragraph [ref=e285]: लखनऊ
+            - generic:
+              - paragraph
+          - img "Sonam Wangchuk, Sonam Wangchuk Hunger Strike, Shankaracharya Swami Avimukteshwaranand, PM Modi, PMO India, CJP, Abhijeet Dipke, NEET Paper, Dharmendra Pradhan" [ref=e287] [cursor=pointer]
+        - generic [ref=e288]:
+          - generic [ref=e290]:
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - link [ref=e295] [cursor=pointer]:
+                  - /url: /lucknow-news/akhilesh-yadav-appeals-sonam-wangchuk-to-end-hunger-strike-20746676
+                  - heading "‘हृदयहीन-अधर्मी है भाजपा सरकार’, अखिलेश यादव ने की सोनम वांगचुक से अपील कहा-अनशन तोड़ दें" [level=3] [ref=e297]
+                - generic [ref=e298]:
+                  - link [ref=e299] [cursor=pointer]:
+                    - /url: /lucknow-news
+                    - paragraph [ref=e300]: लखनऊ
+                  - generic:
+                    - paragraph
+              - img "Akhilesh Yadav, Sonam Wangchuk Hunger Strike, UP Politics, BJP Government, Samajwadi Party, UP News in Hindi, अखिलेश यादव, सोनम वांगचुक, यूपी राजनीति, समाजवादी पार्टी, UP Elwction 2027, UP Politics News, BJP" [ref=e302] [cursor=pointer]
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - link [ref=e307] [cursor=pointer]:
+                  - /url: /new-delhi-news/sonam-wangchuk-hunger-strike-cajpa-abhijeet-dipke-argue-delhi-police-jantar-mantar-20743691
+                  - heading "‘वो मर जाएंगे तब तसल्ली मिलेगी?’ जंतर-मंतर पर सोनम वांगचुक को धूप से बचाने के लिए पुलिस के आगे गिड़गिड़ाए अभिजीत दीपके" [level=3] [ref=e309]
+                - generic [ref=e310]:
+                  - link [ref=e311] [cursor=pointer]:
+                    - /url: /new-delhi-news
+                    - paragraph [ref=e312]: नई दिल्ली
+                  - generic:
+                    - paragraph
+              - img "Sonam Wangchuk protest" [ref=e314] [cursor=pointer]
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - link [ref=e319] [cursor=pointer]:
+                  - /url: /new-delhi-news/sonam-wangchuk-hunger-strike-jantar-mantar-calls-himself-ordinary-citizen-not-modern-gandhi-20739352
+                  - heading "‘मैं गांधी नहीं हूं, अपना हीरो खुद बनिए’, सोनम वांगचुक ने लोगों से आंदोलन में शामिल होने की अपील की" [level=3] [ref=e321]
+                - generic [ref=e322]:
+                  - link [ref=e323] [cursor=pointer]:
+                    - /url: /new-delhi-news
+                    - paragraph [ref=e324]: नई दिल्ली
+                  - generic:
+                    - paragraph
+              - img "Sonam Wangchuk hunger strike Delhi" [ref=e326] [cursor=pointer]
+          - generic [ref=e327]:
+            - button "Previous slide" [disabled]
+            - button "Next slide" [ref=e332] [cursor=pointer]
+      - generic [ref=e337]:
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - img "Square Image" [ref=e341]
+            - heading "राष्ट्रीय" [level=2] [ref=e342]
+          - link "View All" [ref=e343] [cursor=pointer]:
+            - /url: /national-news
+        - generic [ref=e344]:
+          - link [ref=e345] [cursor=pointer]:
+            - /url: /national-news/hyderabad-school-kalma-controversy-t-raja-singh-statement-owaisi-constituency-20751564
+            - heading "‘दूसरी क्लास के बच्चे के साथ यह हरकत बेहद शर्मनाक है’, हैदराबाद स्कूल में हिंदू छात्र को होमवर्क में ‘कलमा’ देने पर भड़के विधायक टी. राजा सिंह" [level=3] [ref=e347]
+          - generic [ref=e348]:
+            - link [ref=e349] [cursor=pointer]:
+              - /url: /national-news
+              - paragraph [ref=e350]: राष्ट्रीय
+            - generic:
+              - paragraph
+          - img "Hyderabad School Homework News, Asaduddin Owaisi Constituency" [ref=e352] [cursor=pointer]
+        - separator [ref=e353]
+        - generic [ref=e355]:
+          - generic [ref=e356]:
+            - link [ref=e357] [cursor=pointer]:
+              - /url: /national-news/jagannath-rath-yatra-2026-history-significance-beliefs-traditions-puri-odisha-20751534
+              - 'heading "Jagannath Puri: भगवान जगन्ननाथ के 3 अलग-अलग रथों की विशिष्ट परंपरा! इस बार यात्रा के लिए क्या तैयारी?" [level=3] [ref=e359]'
+            - generic [ref=e360]:
+              - link [ref=e361] [cursor=pointer]:
+                - /url: /national-news
+                - paragraph [ref=e362]: राष्ट्रीय
+              - generic:
+                - paragraph
+          - img "jagannath rath yatra 2026 history significance beliefs traditions puri odisha" [ref=e364] [cursor=pointer]
+        - separator [ref=e365]
+        - generic [ref=e368]:
+          - link [ref=e369] [cursor=pointer]:
+            - /url: /national-news/bengaluru-law-student-killed-after-rejecting-marriage-proposal-two-brothers-arrested-20751415
+            - heading "बेंगलुरु में सिरफिरे आशिक के भाई ने युवती को उतार दिया मौत के घाट, शादी का ठुकराया था प्रस्ताव" [level=3] [ref=e371]
+          - generic [ref=e372]:
+            - link [ref=e373] [cursor=pointer]:
+              - /url: /national-news
+              - paragraph [ref=e374]: राष्ट्रीय
+            - generic:
+              - paragraph
+        - separator [ref=e375]
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - link [ref=e379] [cursor=pointer]:
+              - /url: /national-news/sonam-wangchuk-has-ruled-out-ending-his-indefinite-hunger-strike-20751401
+              - 'heading "Sonam Wangchuk Hunger Strike: सोनम वांगचुक बोले- ‘मुझसे जल्द भूख हड़ताल खत्म करने को मत कहिए, इससे सरकार को गलत संदेश जाएगा’" [level=3] [ref=e381]'
+            - generic [ref=e382]:
+              - link [ref=e383] [cursor=pointer]:
+                - /url: /national-news
+                - paragraph [ref=e384]: राष्ट्रीय
+              - generic:
+                - paragraph
+          - img "Sonam Wangchuk on hunger strike." [ref=e386] [cursor=pointer]
+      - generic [ref=e390]:
+        - generic [ref=e391]:
+          - generic [ref=e392]:
+            - img "Square Image" [ref=e394]
+            - heading "खेल" [level=2] [ref=e395]
+          - link "View All" [ref=e396] [cursor=pointer]:
+            - /url: /sports-news
+        - generic [ref=e397]:
+          - tab [selected] [ref=e398] [cursor=pointer]:
+            - paragraph [ref=e399]: खेल
+          - tab [ref=e400] [cursor=pointer]:
+            - paragraph [ref=e401]: क्रिकेट
+          - tab [ref=e402] [cursor=pointer]:
+            - paragraph [ref=e403]: फुटबॉल
+          - tab [ref=e404] [cursor=pointer]:
+            - paragraph [ref=e405]: टेनिस
+          - tab [ref=e406] [cursor=pointer]:
+            - paragraph [ref=e407]: अन्य स्पोर्ट्स
+          - tab [ref=e408] [cursor=pointer]:
+            - paragraph [ref=e409]: WWE
+        - generic [ref=e410]:
+          - link [ref=e411] [cursor=pointer]:
+            - /url: /cricket-news/mlc-2026-nicholas-pooran-fastest-century-mi-newyork-vs-washington-freedom-20751467
+            - heading "MLC में निकोलस पूरन ने सिर्फ 31 गेंद में ठोका शतक, बाल-बाल बचा क्रिस गेल का वर्ल्ड रिकॉर्ड" [level=3] [ref=e413]
+          - generic [ref=e414]:
+            - link [ref=e415] [cursor=pointer]:
+              - /url: /cricket-news
+              - paragraph [ref=e416]: क्रिकेट
+            - generic:
+              - paragraph
+          - img "Nicholas Pooran Fastest Century, MLC 2026," [ref=e418] [cursor=pointer]
+        - separator [ref=e419]
+        - generic [ref=e421]:
+          - generic [ref=e422]:
+            - link [ref=e423] [cursor=pointer]:
+              - /url: /cricket-news/ind-vs-eng-2nd-odi-cardiff-india-vs-england-head-to-head-in-oneday-cricket-records-20751322
+              - 'heading "IND vs ENG: टीम इंडिया के खिलाफ 8 साल से नहीं मिली वनडे सीरीज में जीत, जानें इंग्लैंड का कैसा रहा है रिकॉर्ड" [level=3] [ref=e425]'
+            - generic [ref=e426]:
+              - link [ref=e427] [cursor=pointer]:
+                - /url: /cricket-news
+                - paragraph [ref=e428]: क्रिकेट
+              - generic:
+                - paragraph
+          - img "IND vs ENG 2nd ODI" [ref=e430] [cursor=pointer]
+        - separator [ref=e431]
+        - generic [ref=e434]:
+          - link [ref=e435] [cursor=pointer]:
+            - /url: /football-news/thomas-tuchel-reaction-england-vs-argentina-match-in-fifa-world-cup-2026-20751154
+            - heading "FIFA World Cup 2026 के सेमीफाइनल में किस गलती की वजह से हारी इंग्लैंड, कोच ने बताई कहां हुई चूक" [level=3] [ref=e437]
+          - generic [ref=e438]:
+            - link [ref=e439] [cursor=pointer]:
+              - /url: /football-news
+              - paragraph [ref=e440]: फुटबॉल
+            - generic:
+              - paragraph
+        - separator [ref=e441]
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - link [ref=e445] [cursor=pointer]:
+              - /url: /cricket-news/india-vs-pakistan-match-probable-in-icc-cricket-world-cup-2027-after-new-format-20751041
+              - heading "नए फॉर्मेट के हिसाब से कितनी बार Cricket World Cup 2027 में हो सकती है भारत-पाकिस्तान की टक्कर? समझें पूरा समीकरण" [level=3] [ref=e447]
+            - generic [ref=e448]:
+              - link [ref=e449] [cursor=pointer]:
+                - /url: /cricket-news
+                - paragraph [ref=e450]: क्रिकेट
+              - generic:
+                - paragraph
+          - img "भारत पाकिस्तान मैच को लेकर सियासी बवाल शुरू" [ref=e452] [cursor=pointer]
+      - generic [ref=e456]:
+        - generic [ref=e457]:
+          - generic [ref=e458]:
+            - img "Square Image" [ref=e460]
+            - heading "धर्म/ज्योतिष" [level=2] [ref=e461]
+          - link "View All" [ref=e462] [cursor=pointer]:
+            - /url: /astrology-and-spirituality
+        - generic [ref=e463]:
+          - tab [selected] [ref=e464] [cursor=pointer]:
+            - paragraph [ref=e465]: धर्म/ज्योतिष
+          - tab [ref=e466] [cursor=pointer]:
+            - paragraph [ref=e467]: होरोस्कोप
+          - tab [ref=e468] [cursor=pointer]:
+            - paragraph [ref=e469]: धर्म-कर्म
+          - tab [ref=e470] [cursor=pointer]:
+            - paragraph [ref=e471]: धर्म और अध्यात्म
+          - tab [ref=e472] [cursor=pointer]:
+            - paragraph [ref=e473]: त्योहार
+          - tab [ref=e474] [cursor=pointer]:
+            - paragraph [ref=e475]: तीर्थ यात्रा
+          - tab [ref=e476] [cursor=pointer]:
+            - paragraph [ref=e477]: मंदिर
+        - generic [ref=e478]:
+          - link [ref=e479] [cursor=pointer]:
+            - /url: /horoscope-rashifal/aaj-ka-rashifal-16-july-2026-daily-horoscope-all-zodiac-signs-20749481
+            - 'heading "Aaj Ka Rashifal 16 July 2026: जानें मेष, वृष, मिथुन समेत सभी 12 राशियों का भविष्यफल" [level=3] [ref=e481]'
+          - generic [ref=e482]:
+            - link [ref=e483] [cursor=pointer]:
+              - /url: /horoscope-rashifal
+              - paragraph [ref=e484]: राशिफल
+            - generic:
+              - paragraph
+          - img "Aaj Ka Rashifal 16 July 2026 Daily Horoscope all zodiac signs" [ref=e486] [cursor=pointer]
+        - separator [ref=e487]
+        - generic [ref=e489]:
+          - generic [ref=e490]:
+            - link [ref=e491] [cursor=pointer]:
+              - /url: /astrology-and-spirituality/follow-4-remedies-on-sawan-nag-panchami-2026-get-relief-from-diseases-debts-and-enemies-20749269
+              - 'heading "Sawan 2026: नाग पंचमी पर क्या उपाय करें? रोग, कर्ज और शत्रु बाधा से मिलेगी राहत" [level=3] [ref=e493]'
+            - generic [ref=e494]:
+              - link [ref=e495] [cursor=pointer]:
+                - /url: /astrology-and-spirituality
+                - paragraph [ref=e496]: धर्म/ज्योतिष
+              - generic:
+                - paragraph
+          - img "follow 4 remedies on sawan nag panchami 2026 get relief from diseases debts and enemies" [ref=e498] [cursor=pointer]
+        - separator [ref=e499]
+        - generic [ref=e502]:
+          - link [ref=e503] [cursor=pointer]:
+            - /url: /dharma-karma/gupt-navratri-2026-puja-vidhi-vrat-niyam-upay-puja-samagri-20747141
+            - heading "गुप्त नवरात्र शुरू होने से पहले जान लें, पूजा सामग्री से लेकर कन्या पूजन तक पूरी विधि" [level=3] [ref=e505]
+          - generic [ref=e506]:
+            - link [ref=e507] [cursor=pointer]:
+              - /url: /dharma-karma
+              - paragraph [ref=e508]: धर्म-कर्म
+            - generic:
+              - paragraph
+        - separator [ref=e509]
+        - generic [ref=e511]:
+          - generic [ref=e512]:
+            - link [ref=e513] [cursor=pointer]:
+              - /url: /dharma-karma/rahu-in-astrology-effects-meaning-mobile-phone-addiction-20749127
+              - heading "मोबाइल के कब्जे से दिमाग की मुक्ति में छिपा है राहु का उपाय- पढ़िए एक पंडित के विचार" [level=3] [ref=e515]
+            - generic [ref=e516]:
+              - link [ref=e517] [cursor=pointer]:
+                - /url: /dharma-karma
+                - paragraph [ref=e518]: धर्म-कर्म
+              - generic:
+                - paragraph
+          - img "Rahu in Astrology Effects meaning mobile phone addiction" [ref=e520] [cursor=pointer]
+      - generic [ref=e522]:
+        - generic [ref=e523]:
+          - generic [ref=e524]:
+            - img "Square Image" [ref=e526]
+            - heading "मनोरंजन" [level=2] [ref=e527]
+          - link "View All" [ref=e528] [cursor=pointer]:
+            - /url: /entertainment-news
+        - generic [ref=e529]:
+          - tab [selected] [ref=e530] [cursor=pointer]:
+            - paragraph [ref=e531]: मनोरंजन
+          - tab [ref=e532] [cursor=pointer]:
+            - paragraph [ref=e533]: बॉलीवुड
+          - tab [ref=e534] [cursor=pointer]:
+            - paragraph [ref=e535]: हॉलीवुड
+          - tab [ref=e536] [cursor=pointer]:
+            - paragraph [ref=e537]: टॉलीवुड
+          - tab [ref=e538] [cursor=pointer]:
+            - paragraph [ref=e539]: टीवी न्यूज़
+          - tab [ref=e540] [cursor=pointer]:
+            - paragraph [ref=e541]: OTT
+        - generic [ref=e542]:
+          - link [ref=e543] [cursor=pointer]:
+            - /url: /entertainment-news/shilpa-shinde-fake-video-controversy-lock-upp-bhabiji-ghar-par-hain-harassment-bigg-boss-bail-20751353
+            - heading "Lock Upp में शिल्पा शिंदे का खुलासा- मेरे मोबाइल पर किसी का गंदा वीडियो भेजा और बोला- आपका है, इसे आउट करें क्या?" [level=3] [ref=e545]
+          - generic [ref=e546]:
+            - link [ref=e547] [cursor=pointer]:
+              - /url: /entertainment-news
+              - paragraph [ref=e548]: मनोरंजन
+            - generic:
+              - paragraph
+          - img "Shilpa Shinde Recalls Fake MMS Incident" [ref=e550] [cursor=pointer]
+        - separator [ref=e551]
+        - generic [ref=e553]:
+          - generic [ref=e554]:
+            - link [ref=e555] [cursor=pointer]:
+              - /url: /bollywood-news/paresh-rawal-regrets-miss-irrelevant-comment-on-anupama-chopra-over-dhurandhar-review-bollywood-news-20751247
+              - heading "‘धुरंधर’ के रिव्यू पर अनुपमा चोपड़ा को कहा था बेमतलब, अब परेश रावल को हुआ पछतावा, किया खुलासा" [level=3] [ref=e557]
+            - generic [ref=e558]:
+              - link [ref=e559] [cursor=pointer]:
+                - /url: /bollywood-news
+                - paragraph [ref=e560]: बॉलीवुड
+              - generic:
+                - paragraph
+          - img "Paresh Rawal On Anupama Chopra" [ref=e562] [cursor=pointer]
+        - separator [ref=e563]
+        - generic [ref=e566]:
+          - link [ref=e567] [cursor=pointer]:
+            - /url: /bollywood-news/deepika-padukone-sonam-wangchuk-instagram-story-viral-screenshot-fact-check-fake-post-truth-20751108
+            - heading "Sonam Wangchuk के लिए दीपिका पादुकोण ने पहले किया पोस्ट, फिर कर दिया डिलीट? वायरल तस्वीर का जानें सच" [level=3] [ref=e569]
+          - generic [ref=e570]:
+            - link [ref=e571] [cursor=pointer]:
+              - /url: /bollywood-news
+              - paragraph [ref=e572]: बॉलीवुड
+            - generic:
+              - paragraph
+        - separator [ref=e573]
+        - generic [ref=e575]:
+          - generic [ref=e576]:
+            - link [ref=e577] [cursor=pointer]:
+              - /url: /entertainment-news/anaya-bangar-gender-reassignment-surgery-pregnancy-truth-recovery-family-support-transgender-journey-20751047
+              - heading "जेंडर चेंज की सर्जरी के बाद अब मां बन सकती हैं अनाया बांगर? खुद दे दिया जवाब, छलका दर्द" [level=3] [ref=e579]
+            - generic [ref=e580]:
+              - link [ref=e581] [cursor=pointer]:
+                - /url: /entertainment-news
+                - paragraph [ref=e582]: मनोरंजन
+              - generic:
+                - paragraph
+          - img "Anaya Bangar Gender Affiriming Surgery" [ref=e584] [cursor=pointer]
+      - generic [ref=e586]:
+        - generic [ref=e587]:
+          - generic [ref=e588]:
+            - img "Square Image" [ref=e590]
+            - heading "हेल्थ" [level=2] [ref=e591]
+          - link "View All" [ref=e592] [cursor=pointer]:
+            - /url: /health-news
+        - generic [ref=e593]:
+          - tab [selected] [ref=e594] [cursor=pointer]:
+            - paragraph [ref=e595]: हेल्थ
+          - tab [ref=e596] [cursor=pointer]:
+            - paragraph [ref=e597]: डाइट फिटनेस
+          - tab [ref=e598] [cursor=pointer]:
+            - paragraph [ref=e599]: वेट लॉस
+          - tab [ref=e600] [cursor=pointer]:
+            - paragraph [ref=e601]: डिजीज एंड कंडीशन्‍स
+          - tab [ref=e602] [cursor=pointer]:
+            - paragraph [ref=e603]: सौंदर्य
+          - tab [ref=e604] [cursor=pointer]:
+            - paragraph [ref=e605]: घरेलू और प्राकृतिक उपचार
+          - tab [ref=e606] [cursor=pointer]:
+            - paragraph [ref=e607]: महिला स्वास्थ्य
+          - tab [ref=e608] [cursor=pointer]:
+            - paragraph [ref=e609]: तन-मन
+        - generic [ref=e610]:
+          - link [ref=e611] [cursor=pointer]:
+            - /url: /health-news/hypercalcemia-cause-symptoms-mayo-clinic-20751306
+            - 'heading "Hypercalcemia: बार-बार प्यास लगती है और कब्ज रहती है? क्लीवलैंड क्लिनिक ने बताया यह खून में बढ़े कैल्शियम का संकेत हो सकता है" [level=3] [ref=e613]'
+          - generic [ref=e614]:
+            - link [ref=e615] [cursor=pointer]:
+              - /url: /health-news
+              - paragraph [ref=e616]: स्वास्थ्य
+            - generic:
+              - paragraph
+          - img "Hypercalcemia Symptoms,Cleveland Clinic Hypercalcemia,High Calcium Signs," [ref=e618] [cursor=pointer]
+        - separator [ref=e619]
+        - generic [ref=e621]:
+          - generic [ref=e622]:
+            - link [ref=e623] [cursor=pointer]:
+              - /url: /health-news/dementia-who-new-guideline-risk-factors-who-guidelines-20751188
+              - 'heading "Dementia: स्मोकिंग, हाई BP और अकेलापन बढ़ा सकते हैं डिमेंशिया का खतरा, WHO ने जारी की नई गाइडलाइन" [level=3] [ref=e625]'
+            - generic [ref=e626]:
+              - link [ref=e627] [cursor=pointer]:
+                - /url: /health-news
+                - paragraph [ref=e628]: स्वास्थ्य
+              - generic:
+                - paragraph
+          - img "Dementia Risk Factors,WHO Dementia Guidelines,,Prevent Dementia Naturally," [ref=e630] [cursor=pointer]
+        - separator [ref=e631]
+        - generic [ref=e634]:
+          - link [ref=e635] [cursor=pointer]:
+            - /url: /health-news/burping-and-gas-cause-remedies-mayo-clinic-20751099
+            - 'heading "Burping And Gas: बार-बार डकार क्यों आती है? मेयो क्लिनिक की रिसर्च से जानिए कारण और कब ये नुकसानदायक हो सकती है" [level=3] [ref=e637]'
+          - generic [ref=e638]:
+            - link [ref=e639] [cursor=pointer]:
+              - /url: /health-news
+              - paragraph [ref=e640]: स्वास्थ्य
+            - generic:
+              - paragraph
+        - separator [ref=e641]
+        - generic [ref=e643]:
+          - generic [ref=e644]:
+            - link [ref=e645] [cursor=pointer]:
+              - /url: /health-news/uterine-fibroids-symptoms-cause-when-to-consult-a-doctor-20749948
+              - 'heading "Uterine Fibroids: बिना लक्षण भी हो सकती है यह बीमारी; जानिए यूट्राइन फाइब्रॉइड के संकेत और कब डॉक्टर से मिलना चाहिए" [level=3] [ref=e647]'
+            - generic [ref=e648]:
+              - link [ref=e649] [cursor=pointer]:
+                - /url: /health-news
+                - paragraph [ref=e650]: स्वास्थ्य
+              - generic:
+                - paragraph
+          - img "uterine fibroids,fibroid symptoms,uterus fibroids," [ref=e652] [cursor=pointer]
+      - generic [ref=e654]:
+        - generic [ref=e655]:
+          - generic [ref=e656]:
+            - img "Square Image" [ref=e658]
+            - heading "विश्व" [level=2] [ref=e659]
+          - link "View All" [ref=e660] [cursor=pointer]:
+            - /url: /world-news
+        - generic [ref=e661]:
+          - tab [selected] [ref=e662] [cursor=pointer]:
+            - paragraph [ref=e663]: विश्व
+          - tab [ref=e664] [cursor=pointer]:
+            - paragraph [ref=e665]: अमेरिका
+          - tab [ref=e666] [cursor=pointer]:
+            - paragraph [ref=e667]: एशिया
+          - tab [ref=e668] [cursor=pointer]:
+            - paragraph [ref=e669]: यूरोप
+          - tab [ref=e670] [cursor=pointer]:
+            - paragraph [ref=e671]: गल्फ़
+          - tab [ref=e672] [cursor=pointer]:
+            - paragraph [ref=e673]: पाकिस्तान
+        - generic [ref=e674]:
+          - link [ref=e675] [cursor=pointer]:
+            - /url: /world-news/iraqi-prime-minister-al-zaidi-arrives-in-washington-amidst-us-strikes-on-iran-what-did-trump-say-20751573
+            - heading "ईरान पर अमेरिकी हमले के बीच वाशिंगटन पहुंचे इराकी प्रधानमंत्री अली अल जैदी, क्या बोले ट्रंप?" [level=3] [ref=e677]
+          - generic [ref=e678]:
+            - link [ref=e679] [cursor=pointer]:
+              - /url: /world-news
+              - paragraph [ref=e680]: विदेश
+            - generic:
+              - paragraph
+          - img "Iraqi Prime Minister Ali al-Zaidi, US President Donald Trump" [ref=e682] [cursor=pointer]
+        - separator [ref=e683]
+        - generic [ref=e685]:
+          - generic [ref=e686]:
+            - link [ref=e687] [cursor=pointer]:
+              - /url: /world-news/who-unicef-report-india-zero-dose-children-vaccination-data-2025-20751323
+              - 'heading "WHO-UNICEF Report: भारत के 6.79 लाख बच्चों को 2025 में नहीं लगी एक भी वैक्सीन, सामने आए चिंताजनक आंकड़े" [level=3] [ref=e689]'
+            - generic [ref=e690]:
+              - link [ref=e691] [cursor=pointer]:
+                - /url: /world-news
+                - paragraph [ref=e692]: विदेश
+              - generic:
+                - paragraph
+          - img "zero dose children in india, who unicef immunization report" [ref=e694] [cursor=pointer]
+        - separator [ref=e695]
+        - generic [ref=e698]:
+          - link [ref=e699] [cursor=pointer]:
+            - /url: /world-news/iran-us-talks-tension-no-negotiation-until-commitments-fulfilled-20751043
+            - 'heading "US-Iran War: अमेरिकी हमले के बाद ईरान का सख्त बयान, बातचीत से किया इनकार" [level=3] [ref=e701]'
+          - generic [ref=e702]:
+            - link [ref=e703] [cursor=pointer]:
+              - /url: /world-news
+              - paragraph [ref=e704]: विदेश
+            - generic:
+              - paragraph
+        - separator [ref=e705]
+        - generic [ref=e707]:
+          - generic [ref=e708]:
+            - link [ref=e709] [cursor=pointer]:
+              - /url: /world-news/iran-us-war-air-defense-systems-activated-in-tehran-irgc-attack-airbases-in-kuwait-and-jordan-20751126
+              - 'heading "Iran-US-War: अमेरिकी हमलों के बीच तेहरान में एयर डिफेंस सिस्टम एक्टिव, IRGC ने कुवैत और जॉर्डन एयरबेस को बनाया निशाना" [level=3] [ref=e711]'
+            - generic [ref=e712]:
+              - link [ref=e713] [cursor=pointer]:
+                - /url: /world-news
+                - paragraph [ref=e714]: विदेश
+              - generic:
+                - paragraph
+          - img "Air defense systems activated in Tehran" [ref=e716] [cursor=pointer]
+      - generic [ref=e718]:
+        - generic [ref=e719]:
+          - generic [ref=e720]:
+            - img "Square Image" [ref=e722]
+            - heading "लाइफस्टाइल" [level=2] [ref=e723]
+          - link "View All" [ref=e724] [cursor=pointer]:
+            - /url: /lifestyle-news
+        - generic [ref=e725]:
+          - tab [selected] [ref=e726] [cursor=pointer]:
+            - paragraph [ref=e727]: लाइफस्टाइल
+          - tab [ref=e728] [cursor=pointer]:
+            - paragraph [ref=e729]: फूड
+          - tab [ref=e730] [cursor=pointer]:
+            - paragraph [ref=e731]: फैशन
+        - generic [ref=e732]:
+          - link [ref=e733] [cursor=pointer]:
+            - /url: /lifestyle-news/how-to-clean-burnt-iron-kadai-without-scrubbing-jali-hui-kadhai-saaf-karne-ka-tarika-20751393
+            - 'heading "Kadai Cleaning Hack: बिना रगड़े और घिसे लोहे की जली कड़ाही कैसे साफ करें, स्ट्रीट फूड बेचने वाले ने बताया आसान तरीका" [level=3] [ref=e735]'
+          - generic [ref=e736]:
+            - link [ref=e737] [cursor=pointer]:
+              - /url: /lifestyle-news
+              - paragraph [ref=e738]: लाइफस्टाइल
+            - generic:
+              - paragraph
+          - img "Iron Kadai Cleaning Hack, How To Remove Burnt Stains From Iron Kadai" [ref=e740] [cursor=pointer]
+        - separator [ref=e741]
+        - generic [ref=e743]:
+          - generic [ref=e744]:
+            - link [ref=e745] [cursor=pointer]:
+              - /url: /lifestyle-news/highest-monasteries-in-india-famous-high-altitude-buddhist-monasteries-20746895
+              - 'heading "Highest Monasteries In India: घूमने के लिहाज से भी खूबसूरत हैं सबसे ऊंचाई पर बने ये चार मठ" [level=3] [ref=e747]'
+            - generic [ref=e748]:
+              - link [ref=e749] [cursor=pointer]:
+                - /url: /lifestyle-news
+                - paragraph [ref=e750]: लाइफस्टाइल
+              - generic:
+                - paragraph
+          - img "High Altitude Monasteries, Monastery" [ref=e752] [cursor=pointer]
+        - separator [ref=e753]
+        - generic [ref=e756]:
+          - link [ref=e757] [cursor=pointer]:
+            - /url: /lifestyle-news/how-to-style-long-skirt-as-dress-without-cutting-and-stitching-for-monsoon-20746673
+            - heading "एक ही लॉन्ग स्कर्ट से बनाएं 3 तरह की खूबसूरत ड्रेस! आसान है तरीका" [level=3] [ref=e759]
+          - generic [ref=e760]:
+            - link [ref=e761] [cursor=pointer]:
+              - /url: /lifestyle-news
+              - paragraph [ref=e762]: लाइफस्टाइल
+            - generic:
+              - paragraph
+        - separator [ref=e763]
+        - generic [ref=e765]:
+          - generic [ref=e766]:
+            - link [ref=e767] [cursor=pointer]:
+              - /url: /lifestyle-news/restaurant-style-salad-plate-decoration-ideas-bird-flower-swan-design-tips-20746146
+              - 'heading "Decoration Ideas: रेस्टोरेंट जैसी सलाद प्लेट सजाना है आसान, सीखें बर्ड, फ्लावर और स्वान डिजाइन बनाने का ट्रिक" [level=3] [ref=e769]'
+            - generic [ref=e770]:
+              - link [ref=e771] [cursor=pointer]:
+                - /url: /lifestyle-news
+                - paragraph [ref=e772]: लाइफस्टाइल
+              - generic:
+                - paragraph
+          - img "Salad Garnishing Ideas, Salad Design Ideas" [ref=e774] [cursor=pointer]
+      - generic [ref=e776]:
+        - generic [ref=e777]:
+          - generic [ref=e778]:
+            - img "Square Image" [ref=e780]
+            - heading "बिजनेस" [level=2] [ref=e781]
+          - link "View All" [ref=e782] [cursor=pointer]:
+            - /url: /business-news
+        - generic [ref=e783]:
+          - tab [selected] [ref=e784] [cursor=pointer]:
+            - paragraph [ref=e785]: बिजनेस
+          - tab [ref=e786] [cursor=pointer]:
+            - paragraph [ref=e787]: पर्सनल फाइनेंस
+          - tab [ref=e788] [cursor=pointer]:
+            - paragraph [ref=e789]: कॉर्पोरेट
+          - tab [ref=e790] [cursor=pointer]:
+            - paragraph [ref=e791]: शेयर मार्केट
+        - generic [ref=e792]:
+          - link [ref=e793] [cursor=pointer]:
+            - /url: /business-news/stock-market-opening-nifty-50-sbi-hdfc-life-insurance-share-price-down-20751300
+            - 'heading "SBI Life Share Price: HDFC Life, Jio Financial जैसे स्टॉक्स में दिखी गिरावट, जानिए कितनी रह गई शेयर प्राइस" [level=3] [ref=e795]'
+          - generic [ref=e796]:
+            - link [ref=e797] [cursor=pointer]:
+              - /url: /business-news
+              - paragraph [ref=e798]: कारोबार
+            - generic:
+              - paragraph
+          - img "Stock Market Opening Update Nifty 50 Losers List" [ref=e800] [cursor=pointer]
+        - separator [ref=e801]
+        - generic [ref=e803]:
+          - generic [ref=e804]:
+            - link [ref=e805] [cursor=pointer]:
+              - /url: /business-news/hcl-tech-tech-mahindra-maruti-suzuki-bajaj-finance-and-mahindra-and-mahindra-share-price-rise-20751332
+              - 'heading "HCL Tech Share Price: M&M, Maruti Suzuki और Bajaj Finance के शेयरों में आई खरिदारी, जानिए 1 हफ्ते का रिटर्न" [level=3] [ref=e807]'
+            - generic [ref=e808]:
+              - link [ref=e809] [cursor=pointer]:
+                - /url: /business-news
+                - paragraph [ref=e810]: कारोबार
+              - generic:
+                - paragraph
+          - img "Maruti Suzuki Share Price" [ref=e812] [cursor=pointer]
+        - separator [ref=e813]
+        - generic [ref=e816]:
+          - link [ref=e817] [cursor=pointer]:
+            - /url: /business-news/crude-oil-price-hike-impact-windfall-tax-increase-petrol-diesel-price-no-change-20751117
+            - heading "Diesel और ATF पर सरकार ने बढ़ाया विंडफॉल टैक्स, जानें आज क्या हैं पेट्रोल और डीजल के रेट" [level=3] [ref=e819]
+          - generic [ref=e820]:
+            - link [ref=e821] [cursor=pointer]:
+              - /url: /business-news
+              - paragraph [ref=e822]: कारोबार
+            - generic:
+              - paragraph
+        - separator [ref=e823]
+        - generic [ref=e825]:
+          - generic [ref=e826]:
+            - link [ref=e827] [cursor=pointer]:
+              - /url: /business-news/uk-india-fta-british-airways-to-increase-weekly-flights-to-india-by-winter-20749726
+              - 'heading "भारत-ब्रिटेन में ‘फ्री ट्रेड’ की नई उड़ान: ब्रिटिश एयरवेज बढ़ाएगी चक्कर, सर्दियों से हर हफ्ते उड़ान भरेंगी 70 फ्लाइट्स" [level=3] [ref=e829]'
+            - generic [ref=e830]:
+              - link [ref=e831] [cursor=pointer]:
+                - /url: /business-news
+                - paragraph [ref=e832]: कारोबार
+              - generic:
+                - paragraph
+          - img "British Airways" [ref=e834] [cursor=pointer]
+      - generic [ref=e836]:
+        - generic [ref=e837]:
+          - generic [ref=e838]:
+            - img "Square Image" [ref=e840]
+            - heading "शिक्षा" [level=2] [ref=e841]
+          - link "View All" [ref=e842] [cursor=pointer]:
+            - /url: /education-news
+        - generic [ref=e843]:
+          - tab [selected] [ref=e844] [cursor=pointer]:
+            - paragraph [ref=e845]: शिक्षा
+          - tab [ref=e846] [cursor=pointer]:
+            - paragraph [ref=e847]: परीक्षा
+          - tab [ref=e848] [cursor=pointer]:
+            - paragraph [ref=e849]: एग्‍जाम टिप्‍स एंड ट्रिक्स
+          - tab [ref=e850] [cursor=pointer]:
+            - paragraph [ref=e851]: जॉब्स
+          - tab [ref=e852] [cursor=pointer]:
+            - paragraph [ref=e853]: मैनेजमेंट मंत्र
+          - tab [ref=e854] [cursor=pointer]:
+            - paragraph [ref=e855]: कॅरियर कोर्सेज
+          - tab [ref=e856] [cursor=pointer]:
+            - paragraph [ref=e857]: रिजल्‍ट्स
+        - generic [ref=e858]:
+          - link [ref=e859] [cursor=pointer]:
+            - /url: /education-news/weekly-top-government-jobs-2026-application-last-date-this-week-20749976
+            - 'heading "Govt Jobs 2026: सरकारी नौकरी पाने के लिए जल्दी करें आवेदन, इस हफ्ते बंद हो रही 7 बड़ी भर्तियों की विंडो" [level=3] [ref=e861]'
+          - generic [ref=e862]:
+            - link [ref=e863] [cursor=pointer]:
+              - /url: /education-news
+              - paragraph [ref=e864]: शिक्षा
+            - generic:
+              - paragraph
+          - img "Weekly Govt Jobs 2026,Weekly Govt Jobs 2026, Sarkari Naukri Last Date, SBI Law Officer Recruitment, Bihar Assistant Professor Vacancy, MP Agriculture Extension Officer,सरकारी नौकरी 2026, सरकारी नौकरी की आखिरी तारीख, एसबीआई लॉ ऑफिसर भर्ती, बिहार असिस्टेंट प्रोफेसर वैकेंसी, एमपी कृषि विस्तार अधिकारी, Government Jobs 2026, Sarkari Naukari 2026" [ref=e866] [cursor=pointer]
+        - separator [ref=e867]
+        - generic [ref=e869]:
+          - generic [ref=e870]:
+            - link [ref=e871] [cursor=pointer]:
+              - /url: /education-news/agniveer-cee-result-2026-selection-process-pft-pmt-document-verification-medical-test-20742846
+              - 'heading "Indian Army Agniveer CEE: अग्निवीर रिजल्ट के बाद आगे क्या? फाइनल सेलेक्शन के लिए किन-किन चरणों से गुजरना होगा" [level=3] [ref=e873]'
+            - generic [ref=e874]:
+              - link [ref=e875] [cursor=pointer]:
+                - /url: /education-news
+                - paragraph [ref=e876]: शिक्षा
+              - generic:
+                - paragraph
+          - img "agniveer cee result 2026 selection process pft pmt document verification medical test" [ref=e878] [cursor=pointer]
+        - separator [ref=e879]
+        - generic [ref=e882]:
+          - link [ref=e883] [cursor=pointer]:
+            - /url: /alwar-news/rpsc-senior-teacher-exam-starts-today-alwar-guidelines-20741602
+            - 'heading "RPSC Senior Teacher Exam: वरिष्ठ अध्यापक भर्ती परीक्षा आज से शुरू, 57 एग्जाम सेंटर बनाए" [level=3] [ref=e885]'
+          - generic [ref=e886]:
+            - link [ref=e887] [cursor=pointer]:
+              - /url: /alwar-news
+              - paragraph [ref=e888]: अलवर
+            - generic:
+              - paragraph
+        - separator [ref=e889]
+        - generic [ref=e891]:
+          - generic [ref=e892]:
+            - link [ref=e893] [cursor=pointer]:
+              - /url: /education-news/indian-army-agniveer-cee-result-2026-declared-check-aro-wise-merit-list-pdf-20740813
+              - 'heading "Army Agniveer Result 2026: इंडियन आर्मी अग्निवीर CEE रिजल्ट 2026 जारी, मेरिट लिस्ट डाउनलोड करने के लिए डायरेक्ट लिंक देखें" [level=3] [ref=e895]'
+            - generic [ref=e896]:
+              - link [ref=e897] [cursor=pointer]:
+                - /url: /education-news
+                - paragraph [ref=e898]: शिक्षा
+              - generic:
+                - paragraph
+          - img "indian army agniveer cee result 2026 declared check aro wise merit list pdf" [ref=e900] [cursor=pointer]
+    - generic [ref=e902]:
+      - generic [ref=e905]:
+        - heading "Trending News" [level=2] [ref=e906]
+        - link [ref=e907] [cursor=pointer]:
+          - /url: /mumbai-news/siya-goyal-family-shop-raided-fda-tukaram-mundhe-pune-ketan-agarwal-murder-20750993
+          - generic [ref=e908]:
+            - paragraph [ref=e909]: "1"
+            - heading "सिया गोयल के पिता पर तुकाराम मुंडे की FDA का बड़ा एक्शन! दुकान सील, माल जब्त" [level=3] [ref=e910]
+        - link [ref=e911] [cursor=pointer]:
+          - /url: /ashoknagar-news/mother-in-law-and-son-in-law-were-running-an-unethical-trade-10-accused-arrested-20746338
+          - generic [ref=e912]:
+            - paragraph [ref=e913]: "2"
+            - 'heading "अशोक नगर: सास को था लग्जरी गाड़ी-गोल्ड’ का शौक, दामाद के साथ करने लगी देह व्यापार, दोनों गिरफ्तार" [level=3] [ref=e914]'
+        - link [ref=e915] [cursor=pointer]:
+          - /url: /ayodhya-news/ram-mandir-donation-dispute-row-know-5-incidents-related-to-former-ips-amitabh-thakur-20748720
+          - generic [ref=e916]:
+            - paragraph [ref=e917]: "3"
+            - 'heading "Ram Mandir Donation Dispute Row: जब पूर्व IPS अमिताभ ठाकुर को MLA ने जड़ा था थप्पड़! जानिए उनसे जुड़े 5 बड़े किस्से" [level=3] [ref=e918]'
+        - link [ref=e919] [cursor=pointer]:
+          - /url: /mumbai-news/jalgaon-newly-married-woman-dies-road-accident-going-to-maternal-home-20745086
+          - generic [ref=e920]:
+            - paragraph [ref=e921]: "4"
+            - 'heading "Jalgaon: 6 दिन पहले ही हुई थी शादी, हाथों की मेहंदी भी नहीं थी उतरी! मायके जाते समय दुल्हन की दर्दनाक मौत" [level=3] [ref=e922]'
+        - link [ref=e923] [cursor=pointer]:
+          - /url: /mumbai-news/nitin-gadkari-denies-personal-gain-allegations-over-ethanol-blended-petrol-controversy-20749971
+          - generic [ref=e924]:
+            - paragraph [ref=e925]: "5"
+            - heading "‘1600 करोड़ का कर्ज है, बेटे भी ज्यादा नहीं कमाते’, इथेनॉल विवाद पर नितिन गडकरी का बड़ा बयान" [level=3] [ref=e926]
+        - link "More in Trending News" [ref=e928] [cursor=pointer]:
+          - /url: /trending-news
+      - separator [ref=e931]
+      - generic [ref=e932]:
+        - generic [ref=e933]:
+          - heading "Opinion" [level=2] [ref=e934]
+          - link "Read All Opinion" [ref=e935] [cursor=pointer]:
+            - /url: /opinion
+        - generic [ref=e936]:
+          - link [ref=e937] [cursor=pointer]:
+            - /url: /opinion/the-race-for-development-is-taking-away-the-natural-darkness-of-the-night-20750057
+            - generic [ref=e938]:
+              - heading "विकास की दौड़ में रात का प्राकृतिक अंधेरा भी छिनता जा रहा" [level=3] [ref=e939]
+              - paragraph [ref=e940]: Opinion Desk
+            - img "विकास की दौड़ में रात का प्राकृतिक अंधेरा भी छिनता जा रहा" [ref=e943]
+          - link [ref=e944] [cursor=pointer]:
+            - /url: /opinion/relief-from-pain-and-dignity-in-final-days-of-life-20750033
+            - generic [ref=e945]:
+              - heading "अंतिम दिनों में दर्द से राहत और जीवन को सम्मान" [level=3] [ref=e946]
+              - paragraph [ref=e947]: Opinion Desk
+            - img "अंतिम दिनों में दर्द से राहत और जीवन को सम्मान" [ref=e950]
+          - link [ref=e951] [cursor=pointer]:
+            - /url: /opinion/a-new-threat-looming-over-digital-trust-is-a-cause-for-concern-20750017
+            - generic [ref=e952]:
+              - 'heading "संपादकीय: चिंताजनक है डिजिटल भरोसे पर मंडरा रहा नया खतरा" [level=3] [ref=e953]'
+              - paragraph [ref=e954]: Opinion Desk
+            - 'img "संपादकीय: चिंताजनक है डिजिटल भरोसे पर मंडरा रहा नया खतरा" [ref=e957]'
+  - generic [ref=e958]:
+    - generic [ref=e959]:
+      - generic [ref=e960]:
+        - link [ref=e961] [cursor=pointer]:
+          - /url: https://play.google.com/store/apps/details?id=com.vserv.rajasthanpatrika&hl=en_IN&pli=1
+          - img "Play Store" [ref=e963]
+          - generic [ref=e964]:
+            - paragraph [ref=e965]: DOWNLOAD ON
+            - paragraph [ref=e966]: Play Store
+        - link [ref=e970] [cursor=pointer]:
+          - /url: https://apps.apple.com/in/app/patrika-news/id6471367685
+          - img "App Store" [ref=e972]
+          - generic [ref=e973]:
+            - paragraph [ref=e974]: DOWNLOAD ON
+            - paragraph [ref=e975]: App Store
+      - generic [ref=e979]:
+        - link [ref=e980] [cursor=pointer]:
+          - /url: https://twitter.com/PatrikaNews/
+          - img "Twitter" [ref=e981]
+        - link [ref=e982] [cursor=pointer]:
+          - /url: https://www.facebook.com/patrikahindinews/
+          - img "Facebook" [ref=e983]
+        - link [ref=e984] [cursor=pointer]:
+          - /url: https://www.instagram.com/rajasthan_patrika/?hl=en
+          - img "Instagram" [ref=e985]
+        - link [ref=e986] [cursor=pointer]:
+          - /url: https://t.me/patrika360/
+          - img "Telegram" [ref=e987]
+        - link [ref=e988] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/Mypatrika/
+          - img "Youtube" [ref=e989]
+    - separator [ref=e990]
+    - generic [ref=e991]:
+      - link [ref=e992] [cursor=pointer]:
+        - /url: /
+        - img "Patrika Site Logo" [ref=e993]
+      - generic [ref=e994]:
+        - generic [ref=e995] [cursor=pointer]:
+          - paragraph [ref=e996]: Trending Topics
+          - link [ref=e997]:
+            - /url: /horoscope-rashifal
+            - paragraph [ref=e998]: Rashifal
+          - link [ref=e999]:
+            - /url: /topic/t20-world-cup
+            - paragraph [ref=e1000]: T20 World Cup 2026
+          - link [ref=e1001]:
+            - /url: /topic/narendra-modi
+            - paragraph [ref=e1002]: PM Narendra Modi
+        - generic [ref=e1003] [cursor=pointer]:
+          - paragraph [ref=e1004]: Top Categories
+          - link [ref=e1005]:
+            - /url: /national-news
+            - paragraph [ref=e1006]: राष्ट्रीय
+          - link [ref=e1007]:
+            - /url: /entertainment-news
+            - paragraph [ref=e1008]: मनोरंजन
+          - link [ref=e1009]:
+            - /url: /health-news
+            - paragraph [ref=e1010]: स्वास्थ्य
+          - link [ref=e1011]:
+            - /url: /rajasthan-news
+            - paragraph [ref=e1012]: राजस्थान
+          - link [ref=e1013]:
+            - /url: /madhya-pradesh-news
+            - paragraph [ref=e1014]: मध्य प्रदेश
+        - generic [ref=e1015] [cursor=pointer]:
+          - paragraph [ref=e1016]: Legal
+          - link [ref=e1017]:
+            - /url: /grievance-policy
+            - paragraph [ref=e1018]: Grievance Policy
+          - link [ref=e1019]:
+            - /url: /privacy-policy
+            - paragraph [ref=e1020]: Privacy Policy
+          - link [ref=e1021]:
+            - /url: /statutory-provisions-on-reporting-sexual-offenses
+            - paragraph [ref=e1022]: Statutory provisions on reporting (sexual offenses)
+          - link [ref=e1023]:
+            - /url: /this-website-follows-the-dnpas-code-of-conduct
+            - paragraph [ref=e1024]: This website follows the DNPA’s code of conduct
+          - link [ref=e1025]:
+            - /url: /code-of-conduct
+            - paragraph [ref=e1026]: Code of Conduct
+          - link [ref=e1027]:
+            - /url: https://cloud.patrika.com/about-us.html
+            - paragraph [ref=e1028]: About Us
+          - link [ref=e1029]:
+            - /url: /rss
+            - paragraph [ref=e1030]: RSS
+    - paragraph [ref=e1032]: Copyright © 2026 Patrika Group. All Rights Reserved.

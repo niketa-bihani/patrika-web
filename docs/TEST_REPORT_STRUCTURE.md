@@ -15,56 +15,63 @@ Python Version: 3.14.6
 Pytest Version: 9.1.1
 Framework: Playwright (async)
 Test Runner: pytest
+Target: Live site — www.patrika.com
 
 ### Test Results
 
-✅ PASSED:        10 tests
+✅ PASSED:        19 tests
 ❌ FAILED:        0 tests
 ⏭️  SKIPPED:       0 tests
 ─────────────────────────────
-📈 TOTAL:          10 tests
+📈 TOTAL:          19 tests
 ✅ PASS RATE:      100%
-⏱️  EXECUTION TIME:  0.47 seconds
+⏱️  EXECUTION TIME:  91.34 seconds
 
 ---
 
 ## 📋 TEST BREAKDOWN BY CLASS
 
-### TestReportDemo (6 tests)
-├── ✅ test_demo_passing_test               [ 10%]
-├── ✅ test_demo_string_operations         [ 20%]
-├── ✅ test_demo_assertions                [ 30%]
-├── ✅ test_demo_comparison                [ 40%]
-├── ✅ test_demo_conditional_logic         [ 50%]
-└── ✅ test_demo_list_operations           [ 60%]
+### TestLoginFromCSV (4 tests)
+├── ✅ test_tc_login_01_login_entry_point_visible
+├── ✅ test_tc_login_02_otp_triggered_for_valid_mobile
+├── ✅ test_tc_login_03_invalid_mobile_format_rejected
+└── ✅ test_tc_login_04_otp_rate_limit_check
 
-### TestReportFeatures (2 tests)
-├── ✅ test_framework_helpers              [ 70%]
-└── ✅ test_framework_markers              [ 80%]
+### TestLoginPositiveScenarios (6 tests)
+├── ✅ test_login_modal_displays_correctly
+├── ✅ test_valid_mobile_numbers[9876543210]
+├── ✅ test_valid_mobile_numbers[9123456789]
+├── ✅ test_valid_mobile_numbers[8765432109]
+├── ✅ test_valid_mobile_numbers[7654321098]
+└── ✅ test_valid_mobile_numbers[6543210987]
 
-### TestReportStructure (2 tests)
-├── ✅ test_test_organization              [ 90%]
-└── ✅ test_naming_conventions             [100%]
+### TestLoginNegativeScenarios (9 tests)
+├── ✅ test_invalid_mobile_numbers  (8 malformed inputs)
+└── ✅ test_login_with_empty_input
 
 ---
 
 ## 🏷️ TEST BREAKDOWN BY MARKER
 
-### @pytest.mark.smoke (4 tests)
-✅ test_demo_passing_test
-✅ test_demo_assertions
-✅ test_framework_markers
-✅ test_demo_list_operations
+### @pytest.mark.smoke (3 tests)
+✅ test_tc_login_01_login_entry_point_visible
+✅ test_tc_login_02_otp_triggered_for_valid_mobile
+✅ test_login_modal_displays_correctly
 
-### @pytest.mark.regression (3 tests)
-✅ test_demo_string_operations
-✅ test_demo_conditional_logic
-✅ test_framework_helpers
+### @pytest.mark.regression (16 tests)
+✅ test_tc_login_03_invalid_mobile_format_rejected
+✅ test_tc_login_04_otp_rate_limit_check
+✅ test_valid_mobile_numbers      (5 parametrized cases)
+✅ test_invalid_mobile_numbers    (8 parametrized cases)
+✅ test_login_with_empty_input
 
-### @pytest.mark.critical (3 tests)
-✅ test_demo_comparison
-✅ test_demo_list_operations (also @smoke)
-✅ test_test_organization
+### @pytest.mark.high_priority (2 tests)
+✅ test_tc_login_01_login_entry_point_visible
+✅ test_tc_login_02_otp_triggered_for_valid_mobile
+
+### @pytest.mark.medium_priority (2 tests)
+✅ test_tc_login_03_invalid_mobile_format_rejected
+✅ test_tc_login_04_otp_rate_limit_check
 
 ---
 
@@ -74,7 +81,7 @@ Test Runner: pytest
 📄 File: reports/pytest-report.html
 📊 Type: Interactive HTML Report
 🎯 Access: Open in any web browser
-📋 Contents: 
+📋 Contents:
    - Test execution details
    - Pass/Fail status per test
    - Test duration
@@ -82,7 +89,7 @@ Test Runner: pytest
    - Environment metadata
    - Timeline view
 
-To view: 
+To view:
 ```bash
 # Windows
 start reports/pytest-report.html
@@ -94,7 +101,15 @@ open reports/pytest-report.html
 xdg-open reports/pytest-report.html
 ```
 
-### 2. Log File
+### 2. Machine-Readable Results
+📄 Files: reports/junit.xml, reports/test-results.json
+📊 Type: JUnit XML + JSON
+🎯 Access: Consumed by dashboards or downstream tooling
+📋 Contents:
+   - Structured pass/fail results per test
+   - Durations and test IDs
+
+### 3. Log File
 📄 File: reports/pytest.log
 📊 Type: Plaintext Log
 🎯 Access: Open in text editor
@@ -109,21 +124,20 @@ xdg-open reports/pytest-report.html
 ## 🎯 FRAMEWORK FEATURES DEMONSTRATED
 
 ### 1. Test Organization
-- ✅ Test classes for logical grouping
+- ✅ Test classes for logical grouping (core / positive / negative)
 - ✅ Test methods with clear naming conventions
 - ✅ Test documentation with docstrings
 
 ### 2. Test Markers/Tags
 - ✅ @pytest.mark.smoke - Fast smoke tests
 - ✅ @pytest.mark.regression - Regression test suite
-- ✅ @pytest.mark.critical - Critical path tests
-- ✅ Multiple markers per test (e.g., @smoke + @critical)
+- ✅ @pytest.mark.high_priority / medium_priority - Priority tagging
+- ✅ Multiple markers per test (e.g., @smoke + @high_priority)
 
-### 3. Test Utilities
-- ✅ log_step() - Step logging with numbering
-- ✅ get_random_email() - Test data generation
-- ✅ get_random_string() - Random string generation
-- ✅ Assertion helpers and validators
+### 3. Data-Driven Testing
+- ✅ CSVDataLoader - loads test cases from LoginTest.csv
+- ✅ @pytest.mark.parametrize - multiple valid/invalid mobile numbers
+- ✅ log_step() - step logging with numbering
 
 ### 4. Reporting Features
 - ✅ Structured HTML reports with styling
@@ -134,9 +148,9 @@ xdg-open reports/pytest-report.html
 ### 5. Test Steps
 Each test demonstrates using the logging helper:
 ```python
-log_step(1, "Initialize test data")
-log_step(2, "Perform validation")
-log_step(3, "Verify results")
+log_step(1, "Navigate to home and open login modal")
+log_step(2, "Enter valid mobile number")
+log_step(3, "Verify OTP field appears")
 ```
 
 ---
@@ -145,13 +159,13 @@ log_step(3, "Verify results")
 
 ### Test Session Header
 - Platform and Python version
-- Plugin information (asyncio, html, metadata)
+- Plugin information (asyncio, html, metadata, timeout)
 - Configuration file location
 - Asyncio mode settings
 
 ### Test Collection
 ```
-collected 10 items
+collected 19 items
 ```
 Shows total number of tests discovered and executed
 
@@ -177,23 +191,23 @@ Shows totals:
 
 ### Basic Execution (Console Only)
 ```bash
-.venv\Scripts\python -m pytest tests/test_demo.py -v
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py -v
 ```
 
 ### With HTML Report (Configured in pytest.ini)
 ```bash
-.venv\Scripts\python -m pytest tests/test_demo.py
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py
 ```
 Report saved to: `reports/pytest-report.html`
 
 ### Run Specific Test Class
 ```bash
-.venv\Scripts\python -m pytest tests/test_demo.py::TestReportDemo -v
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py::TestLoginFromCSV -v
 ```
 
 ### Run Specific Test Method
 ```bash
-.venv\Scripts\python -m pytest tests/test_demo.py::TestReportDemo::test_demo_passing_test -v
+.venv\Scripts\python -m pytest tests/test_login_from_csv.py::TestLoginFromCSV::test_tc_login_01_login_entry_point_visible -v
 ```
 
 ### Run Tests by Marker
@@ -204,8 +218,8 @@ Report saved to: `reports/pytest-report.html`
 # Regression tests only
 .venv\Scripts\python -m pytest -m regression -v
 
-# Critical tests only
-.venv\Scripts\python -m pytest -m critical -v
+# High-priority tests only
+.venv\Scripts\python -m pytest -m high_priority -v
 
 # Multiple markers (smoke OR regression)
 .venv\Scripts\python -m pytest -m "smoke or regression" -v
@@ -238,7 +252,7 @@ Report saved to: `reports/pytest-report.html`
 Platform: Windows-10 10.0.19045-SP0
 Python: 3.14.6
 Packages: pytest-9.1.1, pluggy-1.6.0
-Plugins: asyncio-1.4.0, html-4.2.0, metadata-3.1.1
+Plugins: asyncio-1.4.0, html-4.2.0, metadata-3.1.1, timeout-2.4.0
 ```
 
 ### Configuration Section
@@ -250,14 +264,13 @@ asyncio_mode: AUTO
 
 ### Test Results Section
 ```
-collected 10 items      [Total tests found]
+collected 19 items      [Total tests found]
 [Test execution list]   [Each test with status and %]
 ```
 
 ### Summary Section
 ```
 ✅ passed: Number of passed tests
-⚠️  warnings: Any configuration warnings
 ⏱️  time: Total execution time
 ```
 
@@ -275,7 +288,7 @@ python_files = test_*.py
 python_classes = Test*
 python_functions = test_*
 asyncio_mode = auto
-addopts = 
+addopts =
     -v                          # Verbose output
     --strict-markers            # Enforce known markers
     --tb=short                  # Short traceback format
@@ -307,25 +320,26 @@ Edit in HTML report template or use custom CSS in pytest configuration
 
 ### Report Output
 - ✅ `reports/pytest-report.html` - HTML Report
+- ✅ `reports/junit.xml` - JUnit XML results
+- ✅ `reports/test-results.json` - JSON results
 - ✅ `reports/pytest.log` - Execution log
 - ✅ `reports/screenshots/` - Failure screenshots (for Playwright tests)
 
 ### Test Files
-- ✅ `tests/test_demo.py` - Demo tests (non-Playwright)
-- ✅ `tests/test_example.py` - Playwright test examples
+- ✅ `tests/test_login_from_csv.py` - Login suite (data-driven from CSV)
 
 ---
 
 ## 🎓 BEST PRACTICES FOR TEST REPORTS
 
 ### 1. Clear Test Names
-✅ Good: `test_user_can_login_with_valid_credentials`
+✅ Good: `test_tc_login_02_otp_triggered_for_valid_mobile`
 ❌ Bad: `test_login`
 
 ### 2. Meaningful Markers
 ✅ Use markers to categorize tests
 ✅ Run subset of tests during development
-✅ Run full suite in CI/CD
+✅ Run full suite before release
 
 ### 3. Step Logging
 ✅ Break tests into logical steps
@@ -362,7 +376,7 @@ Edit in HTML report template or use custom CSS in pytest configuration
 3. Increase verbosity: `-vv` instead of `-v`
 
 ### Markers Not Working?
-1. Define in `pytest.ini` under `[markers]`
+1. Define in `pytest.ini` under `markers`
 2. Use exact marker name from definition
 3. Use `-m` flag to filter: `.venv\Scripts\python -m pytest -m smoke`
 
@@ -375,17 +389,15 @@ The Patrika Web QA Automation framework provides:
 ✅ Structured test organization
 ✅ Comprehensive reporting in multiple formats
 ✅ Test markers/tags for categorization
+✅ Data-driven testing via CSV + parametrize
 ✅ Utility helpers for test data and logging
 ✅ HTML reports with detailed execution information
 ✅ Python + Playwright for cross-browser testing
 ✅ Async/await support for non-blocking operations
 ✅ Pytest fixtures for setup/teardown
-✅ MCP integration for AI-assisted test development
-✅ CI/CD ready configuration
 
 ---
 
 **Report Generated:** 2026-07-09
 **Framework Version:** 1.0.0
 **Status:** ✅ Ready for Production Testing
-
